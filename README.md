@@ -4,3 +4,11 @@
 ## Slides
 
 [Slides](https://adawolfs.github.io/coecis2022/)
+
+## Clone
+
+```bash
+git clone
+git submodules update --init --recursive
+```
+
