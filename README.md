@@ -1,9 +1,9 @@
-# COECIS 2022
+# WASM Everywhere
 ## WebAssembly: En todo, en todas partes al mismo tiempo
 
 ## Slides
 
-[Slides](https://adawolfs.github.io/coecis2022/)
+[Slides](https://adawolfs.github.io/wasm-everywhere)
 
 ## Clone
 
