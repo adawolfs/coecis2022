@@ -6,12 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASM Everywhere</title>
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
     <link rel="stylesheet" href="revealjs/dist/reset.css">
     <link rel="stylesheet" href="revealjs/dist/reveal.css">
     <link rel="stylesheet" href="revealjs/dist/theme/black.css">
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
     <style>
+        .reveal-viewport {
+            background-color: #181818 !important;
+        }
+
+        * {
+            font-family: 'Google Sans', sans-serif !important;
+        }
+
         h1 {
             text-transform: none !important
         }
@@ -23,11 +32,40 @@
         h3 {
             text-transform: none !important
         }
+
+        .blue {
+            color: #538FF7 !important;
+        }
+
+        .red {
+            color: #EC5E4F !important;
+        }
+
+        .yellow {
+            color: #F6BD41 !important;
+        }
+
+        .green {
+            color: #65B867 !important;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50vh;
+            height: auto;
+        }
+
+        table {
+            font-size: 0.5em;
+        }
     </style>
 </head>
 
 <body>
     <div class="reveal">
+        <img class="logo" src="img/google_io_extended.png" alt="google_io_extended">
         <div class="slides">
             <section>
                 <h1>WebAssembly</h1> On Everything Everywhere All at Once
@@ -86,18 +124,11 @@
             <section>
                 <h1>asm.js</h1>
             </section>
-            <section>
-                <p>WASM</p>
-                <p>WASI</p>
-                <p>WAT</p>
-            </section>
-
-
 
             <section>
                 <section>
                     <p>Parte 1:</p>
-                    <h1>Everything</h1>
+                    <h1 class="blue">Everything</h1>
                     <p>(El Todo)</p>
                 </section>
                 <section>
@@ -150,16 +181,20 @@
                         Formato binario con una representacion compacta y eficiente en tamaño y tiempo de carga.
                     </p>
                 </section>
+                <section>
+                    <h3>Lenguajes soportados</h3>
+                    <p>C, C++, C#, Java, Kotlin, Python, PHP, Ruby, Rust, Scala, Swift</p>
+                </section>
             </section>
             <section>
                 <section>
                     <p>Parte 2:</p>
-                    <h1>Everywhere</h1>
+                    <h1 class="yellow">Everywhere</h1>
                     <p>(En todas partes)</p>
                 </section>
                 <section>
-                    <h1>Web</h1>
-                    <p>Chrome, Firefox y Safari</p>
+                    <h1> <span class="red">W</span><span class="blue">E</span><span class="green">B</span></h1>
+                    <p> Chrome, Firefox y Safari</p>
                 </section>
                 <section>
                     <img src="img/support.png" alt="wasm support" srcset="">
@@ -220,7 +255,7 @@
             <section>
                 <section>
                     <p>Parte 3:</p>
-                    <h1>All at once</h1>
+                    <h1 class="red">All at once</h1>
                     <p>(Al mismo tiempo)</p>
                 </section>
                 <section>
