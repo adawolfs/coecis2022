@@ -88,6 +88,16 @@
         button {
             margin-right: 5px;
         }
+
+        .full-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
     </style>
 
 </head>
@@ -95,6 +105,7 @@
 <body>
     <div class="reveal">
         <img id="logo" class="logo" src="img/google_io_extended.png" alt="google_io_extended">
+        <img id="space-travel" class="full-screen" src="img/loop.gif" alt="">
         <div class="slides">
             <section id="black-slide">
             </section>
@@ -177,7 +188,7 @@
                 </section>
             </section>
             <section>
-                <section>
+                <section id="everything">
                     <p>Parte 1:</p>
                     <h1 class="blue">Everything</h1>
                     <p>(El Todo)</p>
@@ -391,25 +402,26 @@ Hello WasmEdge!
         });
     </script>
     <script>
-        Reveal.on('ready', event => {
+        function manageMedia(event) {
             // event.currentSlide, event.indexh, event.indexv
+            document.getElementById('logo').style.display = 'block';
+            document.getElementById('space-travel').style.display = 'none';
             if (event.currentSlide.id === 'black-slide') {
                 // hide logo
                 document.getElementById('logo').style.display = 'none';
-            } else {
-                document.getElementById('logo').style.display = 'block';
+                document.getElementById('space-travel').style.display = 'block';
             }
+
+            if (event.currentSlide.id === 'everything') {
+                document.getElementById('space-travel').style.display = 'none';
+            }
+        }
+        Reveal.on('ready', event => {
+            manageMedia(event)
         });
 
         Reveal.addEventListener('slidechanged', function (event) {
-            // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-
-            if (event.currentSlide.id === 'black-slide') {
-                // hide logo
-                document.getElementById('logo').style.display = 'none';
-            } else {
-                document.getElementById('logo').style.display = 'block';
-            }
+            manageMedia(event)
         });
     </script>
 </body>
