@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
     <style>
         .reveal-viewport {
-            background-color: #181818 !important;
+            background-color: #000000 !important;
         }
 
         * {
@@ -60,21 +60,55 @@
         table {
             font-size: 0.5em;
         }
+
+        .stack-machine {
+            display: flex;
+            flex-direction: column-reverse !important;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .stack-element {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            margin: 1px 0;
+            transition: all 0.5s ease;
+        }
+
+        .stack-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-right: 5px;
+        }
     </style>
+
 </head>
 
 <body>
     <div class="reveal">
-        <img class="logo" src="img/google_io_extended.png" alt="google_io_extended">
+        <img id="logo" class="logo" src="img/google_io_extended.png" alt="google_io_extended">
         <div class="slides">
-            <section>
-                <h1>WebAssembly</h1> On Everything Everywhere All at Once
+            <section id="black-slide">
             </section>
             <section>
                 <section>
-                    <h2>@adawolfs</h2>
-                    <br>
-                    I'm not an expert, but I understand the movie.
+                    <h1>ASM</h1>
+                    <p>1951</p>
+                </section>
+                <section>
+                    <p>
+                        Es un lenguaje de programacion de bajo nivel, es utilizado especialmente en
+                        situaciones donde se necesita un control preciso sobre el rendimiento y la eficiencia de la
+                        máquina.
+                    </p>
                 </section>
             </section>
             <section>
@@ -99,10 +133,7 @@
                 <section>
                     <!-- Cuando fue creado -->
                     <p>
-                        JavaScript fue creado en 1995 por Brendan Eich, para Netscape.
-                    </p>
-                    <p>
-                        Ese mismo año se lanzo Java, y Netscape <b>"queria"</b> un lenguaje similar. <br>
+                        Fue creado mismo año se lanzo Java, y Netscape queria <b>"algo asi de popular"</b> <br>
                     </p>
                     <p>
                         Ese mismo año se lanzo Interet Explorer y Microsoft decidio copiar a Netscape.
@@ -111,49 +142,67 @@
             </section>
             <section>
                 <section>
-                    <h1>Rust</h1>
-                    <p>2015</p>
+                    <h1>asm.js</h1>
+                    <p>2013</p>
                 </section>
                 <section>
                     <p>
-                        Rust es un lenguaje de programacion de sistemas que se centra en la seguridad, tipado seguro y
-                        especialmente en la concurrencia.
+                        Es un subconjunto del lenguaje JavaScript, que permite a los navegadores ejecutar codigo de
+                        forma
+                        eficiente.
                     </p>
+                </section>
+                <section>
+                    <pre data-id="code-animation"><code class="hljs" data-trim ><script type="text/template">
+                            function strlen(ptr) {
+                                ptr = ptr|0;
+                                var curr = 0;
+                                curr = ptr;
+                                while ((MEM8[curr>>0]|0) != 0) {
+                                  curr = (curr + 1)|0;
+                                }
+                                return (curr - ptr)|0;
+                            }
+                        </script></code></pre>
                 </section>
             </section>
             <section>
-                <h1>asm.js</h1>
+                <section>
+                    <h1>WebAssembly</h1> On Everything Everywhere All at Once
+                </section>
+                <section>
+                    <h2>@adawolfs</h2>
+                    <br>
+                    I'm not an expert, but I understand the movie.
+                </section>
             </section>
-
             <section>
                 <section>
                     <p>Parte 1:</p>
                     <h1 class="blue">Everything</h1>
                     <p>(El Todo)</p>
                 </section>
+
+
+
                 <section>
                     <h1>WebAssembly</h1>
+                    <p>2017</p>
                 </section>
+
                 <section>
                     <p>
                         Un conjunto de instrucciones binarias para una <b>maquina virtual de pila</b>.
                         Fue diseñado para proveer un formato de codigo compilable y portable para otros lenguajes de
                         programacion.
                     </p>
-                    <p>
-                        WebAssembly busca brindar entornos de ejecucion rapidos, livianos, portables y seguros.
-                    </p>
                 </section>
                 <section>
                     <p>
-                        La maquina de pila de WASM esta diseñada para ser codificada en un formato binario eficinete en
-                        tamaño y tiempo de carga.
-                    </p>
-                    <p>
-                        Tiene como objetivo ejecutar a velocidades nativas, tomando ventaja de las capacidades del
-                        hardware disponibles en la mayoria de plataformas.
+                        Busca brindar entornos de ejecucion rapidos, livianos, portables y seguros.
                     </p>
                 </section>
+
                 <section>
                     <h1>.WAT</h1>
                     <p>WebAssembly Text File</p>
@@ -182,7 +231,7 @@
                     </p>
                 </section>
                 <section>
-                    <h3>Lenguajes soportados</h3>
+                    <b>Lenguages que pueden compilarse en WASM</b>
                     <p>C, C++, C#, Java, Kotlin, Python, PHP, Ruby, Rust, Scala, Swift</p>
                 </section>
             </section>
@@ -196,12 +245,79 @@
                     <h1> <span class="red">W</span><span class="blue">E</span><span class="green">B</span></h1>
                     <p> Chrome, Firefox y Safari</p>
                 </section>
+
                 <section>
-                    <img src="img/support.png" alt="wasm support" srcset="">
+                    <img src="img/support.png" width="70%" alt="wasm support" srcset="">
+                </section>
+                <section>
+                    <iframe width="100%" height="500px" title="Editor"
+                        src="https://www.assemblyscript.org/editor.html#IyFydW50aW1lPXN0dWIKLyoqIENhbGN1bGF0ZXMgdGhlIG4tdGggRmlib25hY2NpIG51bWJlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIGZpYihuOiBpMzIpOiBpMzIgewogIHZhciBhID0gMCwgYiA9IDEKICBpZiAobiA+IDApIHsKICAgIHdoaWxlICgtLW4pIHsKICAgICAgbGV0IHQgPSBhICsgYgogICAgICBhID0gYgogICAgICBiID0gdAogICAgfQogICAgcmV0dXJuIGIKICB9CiAgcmV0dXJuIGEKfQoKIyFodG1sCjx0ZXh0YXJlYSBpZD0ib3V0cHV0IiBzdHlsZT0iaGVpZ2h0OiAxMDAlOyB3aWR0aDogMTAwJSIgcmVhZG9ubHk+PC90ZXh0YXJlYT4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgpjb25zdCBleHBvcnRzID0gYXdhaXQgaW5zdGFudGlhdGUoYXdhaXQgY29tcGlsZSgpLCB7IC8qIGltcG9ydHMgKi8gfSkKY29uc3Qgb3V0cHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ291dHB1dCcpCmZvciAobGV0IGkgPSAwOyBpIDw9IDEwOyArK2kpIHsKICBvdXRwdXQudmFsdWUgKz0gYGZpYigke2l9KSA9ICR7ZXhwb3J0cy5maWIoaSl9XG5gCn0KPC9zY3JpcHQ+Cg=="></iframe>
+                </section>
+                <section>
+                    <a href="https://blazor.net" target="_blank" rel="noopener noreferrer">
+                        <img src="img/blazor.png" width="100%" alt="blazor wasm support" srcset="">
+                    </a>
+                </section>
+                <section>
+                    <iframe width="100%" height="500px" src="https://flutterweb-wasm.web.app/#/"
+                        frameborder="0"></iframe>
+                    <p>
+
+                        <a href="https://flutter.dev/wasm">https://flutter.dev/wasm</a>
+                    </p>
+                </section>
+                <section>
+                    <h3>Machine Learning</h3>
+                    <img src="img/tfjs-backend-wasm.png" alt="flutter" srcset="">
+                </section>
+
+                <section>
+                    <h3>Gaming</h3>
+                    <img src="img/unity_wasm_support.png" alt="unity wasm" srcset="">
+                </section>
+                <section>
+                    <p>
+                        <iframe id="angrybots-iframe" src="https://beta.unity3d.com/jonas/AngryBots/" scrolling="no"
+                            frameborder="0" width="100%" height="500px"></iframe>
+                    </p>
+                    <a href="https://beta.unity3d.com/jonas/AngryBots/" target="_blank" rel="noopener noreferrer">
+                        AngryBots
+                    </a>
                 </section>
                 <section>
                     <h1>WASI</h1>
-                    <p>WebAssembly Sistem Interface</p>
+                    <p>WebAssembly System Interface</p>
+                    <p>2019</p>
+                </section>
+
+                <section>
+                    <p>
+                        Es una interfaz que permite a los modulos WASM interactuar directamente con el sistema
+                        operativo y otros
+                        programas.
+                    </p>
+                </section>
+
+                <section>
+                    <a href="https://wasmtime.dev/" target="_blank" rel="noopener noreferrer">
+
+                        <img width="50%" src="img/bytecode_alliance_logo.png" alt="">
+                        <h2>Wasmtime</h2>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://wasmer.io/" target="_blank" rel="noopener noreferrer">
+
+                        <img width="40%" src="img/wasmer_logo.png" alt="">
+                        <h2>Wasmer</h2>
+                    </a>
+                </section>
+                <section>
+                    <!-- <iframe width="100%" height="500px" src="https://webassembly.sh/"></iframe> -->
+
+                    <a href="https://webassembly.sh/" target="_blank" rel="noopener noreferrer">
+                        <img width="100%" src="img/webassemblysh.png" alt="wasmedge">
+                    </a>
                 </section>
                 <section>
                     <img src="img/solomon_hykes_wasi.png" alt="solomon hykes wasi" srcset="">
@@ -209,48 +325,41 @@
                 <section>
                     <img src="img/solomon_hykes_wasi_docker.png" alt="solomon hykes wasi" srcset="">
                 </section>
+
                 <section>
-                    <h3>Server Side</h3>
-                </section>
-                <section>
-                    <h3>Serverless</h3>
-                </section>
-                <section>
-                    <h3>Cloud</h3>
-                </section>
-                <section>
-                    <h3>Mobile</h3>
-                    <img src="img/unity_wasm_support.png" alt="unity wasm" srcset="">
-                    <a href="https://flutter.dev/wasm">https://flutter.dev/wasm</a>
-                </section>
-                <section>
-                    <h3>IoT</h3>
-                </section>
-                <section>
-                    <h3>Gaming</h3>
-                    <img src="img/unity_wasm_support.png" alt="unity wasm" srcset="">
-                </section>
-                <section>
-                    <a href="https://beta.unity3d.com/jonas/AngryBots/" target="_blank" rel="noopener noreferrer">
-                        AngryBots
+                    <a href="https://wasmedge.org/" target="_blank" rel="noopener noreferrer">
+                        <img width="40%" src="img/wasmedge.png" alt="wasmedge">
                     </a>
-                    <p>
-                        <iframe src="https://beta.unity3d.com/jonas/AngryBots/" scrolling="no" frameborder="0"
-                            width="100%" height="500px"></iframe>
-                    </p>
                 </section>
                 <section>
-                    <h1>WASMTIME</h1>
+                    <a href='https://docs.docker.com/desktop/wasm/'>
+                        <h3>Docker+Wasm (Beta)</h3>
+                    </a>
+                    <pre data-id="code-animation"><code class="language-shell" data-trim ><script type="text/template">
+# docker run --rm --runtime=io.containerd.wasmedge.v1  \
+        --platform=wasi/wasm secondstate/rust-example-hello:latest
+        
+Hello WasmEdge!
+                    </script></code></pre>
+
                 </section>
+
                 <section>
-                    <h1>WASMER</h1>
-                </section>
-                <section>
-                    <h1>WASMEDGE</h1>
+                    <h3>Cloud, Server Side, Serverless</h3>
+                    <a href="https://krustlet.dev/" target="_blank" rel="noopener noreferrer">
+
+                        <img width="50%" src="img/krustlet_logo.png" alt="">
+                    </a>
                 </section>
                 <section>
                     <h1>Wasm3</h1>
                 </section>
+                <section>
+                    <h3>IoT</h3>
+                </section>
+
+
+
             </section>
             <section>
                 <section>
@@ -259,29 +368,13 @@
                     <p>(Al mismo tiempo)</p>
                 </section>
                 <section>
-                    <p>
-                        Modulos wasm que se ejecutan en un dispositivo de Red.
-                        Modulos wasm que se ejecutan en el kernel.
-                        Modulos wasm cargados en una aplicacion python.
-                        Una aplicacion python compilada a wasm.
-                        Modulos wasm que se ejecutan en contenedores.
-                        Modulos wasm que se ejecutan en envoy.
-                        Un modulo wasm expuesto como una funcion lambda.
-                        Un modulo wasm en ejecucion en un app movil.
-                        Modulos wasm que cargan informacion en el navegador.
-                        Un modulo wasm que se ejecuta en un dispositivo IoT.
-                    </p>
+                    <img width="70%" src="img/iot_wasm.png" alt="iot_wasm">
                 </section>
             </section>
-            <section>
-                <section>
-                    <a href='https://docs.docker.com/desktop/wasm/'>
-                        <h1>Docker+Wasm (Beta)</h1>
-                    </a>
-                </section>
-            </section>
+
         </div>
     </div>
+
     <script src="revealjs/dist/reveal.js"></script>
     <script src="revealjs/plugin/notes/notes.js"></script>
     <script src="revealjs/plugin/markdown/markdown.js"></script>
@@ -295,6 +388,28 @@
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+    <script>
+        Reveal.on('ready', event => {
+            // event.currentSlide, event.indexh, event.indexv
+            if (event.currentSlide.id === 'black-slide') {
+                // hide logo
+                document.getElementById('logo').style.display = 'none';
+            } else {
+                document.getElementById('logo').style.display = 'block';
+            }
+        });
+
+        Reveal.addEventListener('slidechanged', function (event) {
+            // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+
+            if (event.currentSlide.id === 'black-slide') {
+                // hide logo
+                document.getElementById('logo').style.display = 'none';
+            } else {
+                document.getElementById('logo').style.display = 'block';
+            }
         });
     </script>
 </body>
