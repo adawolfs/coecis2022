@@ -49,14 +49,6 @@
             color: #65B867 !important;
         }
 
-        .logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 50vh;
-            height: auto;
-        }
-
         table {
             font-size: 0.5em;
         }
@@ -104,7 +96,6 @@
 
 <body>
     <div class="reveal">
-        <img id="logo" class="logo" src="img/google_io_extended.png" alt="google_io_extended">
         <img id="space-travel" class="full-screen" src="img/loop.gif" alt="">
         <div class="slides">
             <section id="black-slide">
@@ -409,11 +400,8 @@ Hello WasmEdge!
     <script>
         function manageMedia(event) {
             // event.currentSlide, event.indexh, event.indexv
-            document.getElementById('logo').style.display = 'block';
             document.getElementById('space-travel').style.display = 'none';
             if (event.currentSlide.id === 'black-slide') {
-                // hide logo
-                document.getElementById('logo').style.display = 'none';
                 document.getElementById('space-travel').style.display = 'block';
             }
 
