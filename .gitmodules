@@ -1,0 +1,6 @@
+[submodule "revealjs"]
+	path = revealjs
+	url = https://github.com/adawolfs/reveal.js.git
+[submodule "wasm-examples"]
+	path = wasm-examples
+	url = https://github.com/adawolfs/wasm-examples.git
