@@ -6,110 +6,207 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASM Everywhere</title>
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
     <link rel="stylesheet" href="revealjs/dist/reset.css">
     <link rel="stylesheet" href="revealjs/dist/reveal.css">
     <link rel="stylesheet" href="revealjs/dist/theme/black.css">
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
     <style>
-        h1 { text-transform: none !important }
-        h2 { text-transform: none !important }
-        h3 { text-transform: none !important }
+        .reveal-viewport {
+            background-color: #000000 !important;
+        }
+
+        * {
+            font-family: 'Google Sans', sans-serif !important;
+        }
+
+        h1 {
+            text-transform: none !important
+        }
+
+        h2 {
+            text-transform: none !important
+        }
+
+        h3 {
+            text-transform: none !important
+        }
+
+        .blue {
+            color: #538FF7 !important;
+        }
+
+        .red {
+            color: #EC5E4F !important;
+        }
+
+        .yellow {
+            color: #F6BD41 !important;
+        }
+
+        .green {
+            color: #65B867 !important;
+        }
+
+        table {
+            font-size: 0.5em;
+        }
+
+        .stack-machine {
+            display: flex;
+            flex-direction: column-reverse !important;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .stack-element {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            margin: 1px 0;
+            transition: all 0.5s ease;
+        }
+
+        .stack-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-right: 5px;
+        }
+
+        .full-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
     </style>
+
 </head>
 
 <body>
     <div class="reveal">
+        <img id="space-travel" class="full-screen" src="img/loop.gif" alt="">
         <div class="slides">
-            <section>
-                <section>
-                    <h2>@adawolfs</h2>
-                    <br>
-                    I'm not an expert, but I've watched a number of youtube videos
-                </section>
-            </section>
-
-            <section>
-                <h1>WebAssembly</h1> En todo, en todas partes al mismo tiempo
-            </section>
-            <section>
-                <h2>Que es WebAssembly?</h2>
+            <section id="black-slide">
             </section>
             <section>
                 <section>
-                    <h1>WASM</h1>
-                    <p>WebAssembly</p>
+                    <h1>ASM</h1>
+                    <p>1951</p>
                 </section>
                 <section>
                     <p>
-                        WebAssembly es un conjunto de instrucciones binarias para una <b>maquina virtual de pila</b>.
+                        Es un lenguaje de programacion de bajo nivel, es utilizado especialmente en
+                        situaciones donde se necesita un control preciso sobre el rendimiento y la eficiencia de la
+                        máquina.
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>C</h1>
+                    <p>1973</p>
+                </section>
+                <section>
+                    <!-- Por que ha perdido popularidad -->
+                    <p>
+                        Uno de los lenguajes de programacion más populares. Ha influido en muchos otros lenguajes
+                        de programacion, como C++, C#, Java, PHP, Python, Perl, entre otros.
+                    </p>
+                </section>
+
+            </section>
+            <section>
+                <section>
+                    <h1>JavaScript</h1>
+                    <p>1995</p>
+                </section>
+                <section>
+                    <!-- Cuando fue creado -->
+                    <p>
+                        Fue creado mismo año se lanzo Java, y Netscape queria <b>"algo asi de popular"</b> <br>
+                    </p>
+                    <p>
+                        Ese mismo año se lanzo Interet Explorer y Microsoft decidio copiar a Netscape.
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>asm.js</h1>
+                    <p>2013</p>
+                </section>
+                <section>
+                    <p>
+                        Es un subconjunto del lenguaje JavaScript, que permite a los navegadores ejecutar codigo de
+                        forma
+                        eficiente.
+                    </p>
+                </section>
+                <section>
+                    <pre data-id="code-animation"><code class="hljs" data-trim ><script type="text/template">
+                            function strlen(ptr) {
+                                ptr = ptr|0;
+                                var curr = 0;
+                                curr = ptr;
+                                while ((MEM8[curr>>0]|0) != 0) {
+                                  curr = (curr + 1)|0;
+                                }
+                                return (curr - ptr)|0;
+                            }
+                        </script></code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>WebAssembly</h1> On Everything Everywhere All at Once
+                </section>
+                <section>
+                    <h2>@adawolfs</h2>
+                    <br>
+                    I'm not an expert, but I understand the movie.
+                </section>
+            </section>
+            <section>
+                <section id="everything">
+                    <p>Parte 1:</p>
+                    <h1 class="blue">Everything</h1>
+                    <p>(El Todo)</p>
+                </section>
+
+
+
+                <section>
+                    <h1>WebAssembly</h1>
+                    <p>2017</p>
+                </section>
+
+                <section>
+                    <p>
+                        Un conjunto de instrucciones binarias para una <b>maquina virtual de pila</b>.
                         Fue diseñado para proveer un formato de codigo compilable y portable para otros lenguajes de
                         programacion.
                     </p>
                 </section>
                 <section>
                     <p>
-                        WebAssembly es un <b>lenguaje de bajo nivel</b> que puede ser compilado desde otros lenguajes de
-                        programacion.
+                        Busca brindar entornos de ejecucion rapidos, livianos, portables y seguros.
                     </p>
-                </section>
-                <section>
-                    <img src="https://hacks.mozilla.org/files/2019/03/04-01-portability-1-768x576.png" alt="portable">
-                </section>
-                <section>
-                    <img style="max-height: 600px;"
-                        src="https://hacks.mozilla.org/files/2019/03/04-02-portability-1-768x743.png" alt="Portable">
-                </section>
-                <section>
-                    <p>
-                        La maquina de pila de WASM esta diseñada para ser codificada en un formato binario eficinete en
-                        tamaño y tiempo de carga.
-                        Tiene como objetivo ejecutar a velocidades nativas, tomando ventaja de las capacidades del
-                        hardware disponibles en la mayoria de plataformas.
-                    </p>
-                </section>
-                <section>
-                    <p>
-                        WebAssembly es rapido y liviano.
-                    </p>
-                </section>
-                <section>
-                    <img src="img/metrics.webp" alt="metrics">
-                </section>
-                <section>
-                    <a href="https://takahirox.github.io/WebAssembly-benchmark/">WebAssembly Benchmark</a>
-                </section>
-                <section>
-                    <p>
-                        WebAssembly describe una esquema de "memoria segura", y ejecucion en "una caja de arena". <br>
-                        Esto significa que ese codigo no puede comunicarse directamente con el Sistema Operativo.
-                        El host necesita proveer un API para acceder a las fuciones del Sitema Operativo.
-                        El host puede limitar lo que la caja de arena puede realizar.
-                        En el mejor de los casos las exepciones son realizas explicitamente.
-                    </p>
-                </section>
-                <section>
-                    <p>
-                        WebAssembly es Portable y Seguro.
-                    </p>
-                </section>
-               
-                <section>
-                    <img src="https://hacks.mozilla.org/files/2019/03/04-04-bitcoin-1-768x396.png" alt="risky-app">
-                </section>
-                <section>
-                    <img src="https://hacks.mozilla.org/files/2019/03/04-05-sandbox-1-768x427.png" alt="risky-app">
-                </section>
-                <section>
-                    <img style="max-height: 600px;"
-                        src="https://hacks.mozilla.org/files/2019/03/05-05-sec-port-2-768x1082.png"
-                        alt="wasi-security-portability">
                 </section>
 
-            </section>
-            <section>
                 <section>
-                    <h1>WAT</h1>
+                    <h1>.WAT</h1>
                     <p>WebAssembly Text File</p>
                 </section>
                 <section>
@@ -126,80 +223,174 @@
                         )
                     </script></code></pre>
                 </section>
+                <section>
+                    <h1>.WASM</h1>
+                    <p>WebAssembly Binary File</p>
+                </section>
+                <section>
+                    <p>
+                        Formato binario con una representacion compacta y eficiente en tamaño y tiempo de carga.
+                    </p>
+                </section>
+                <section>
+                    <b>Lenguages que pueden compilarse en WASM</b>
+                    <p>C, C++, C#, Java, Kotlin, Python, PHP, Ruby, Rust, Scala, Swift</p>
+                </section>
             </section>
             <section>
                 <section>
-                    <h1>WASI</h1>
-                    <p>WebAssembly System Interface</p>
+                    <p>Parte 2:</p>
+                    <h1 class="yellow">Everywhere</h1>
+                    <p>(En todas partes)</p>
                 </section>
                 <section>
-                    Es una Interfaz de Sistema para WebAssembly, conformada por colecciones modulares de APIs
-                    estandarizadas enfocadas en Seguridad y Portabilidad.
-                    Estas APIs son principalmente para sistemas de archivos, network, graficos, audio y dispositivos de
-                    entrada
-                </section>
-                <section>
-                    <img src="https://hacks.mozilla.org/files/2019/08/01-01-why-768x313.png" alt="wasm-langs">
-                </section>
-                <section>
-                    <img src="https://hacks.mozilla.org/files/2019/03/05-01-wasi-1-768x644.png" alt="wasi-core">
+                    <h1> <span class="red">W</span><span class="blue">E</span><span class="green">B</span></h1>
+                    <p> Chrome, Firefox y Safari</p>
                 </section>
 
                 <section>
-                    <img src="https://hacks.mozilla.org/files/2019/03/05-02-wasi-1-768x385.png" alt="wasi-core">
+                    <img src="img/support.png" width="70%" alt="wasm support" srcset="">
                 </section>
-                
                 <section>
-                    <img src="img/solomon_hykes_wasi.png" alt="solomon hykes wasi" srcset="">
+                    <iframe width="100%" height="500px" title="Editor"
+                        src="https://www.assemblyscript.org/editor.html#IyFydW50aW1lPXN0dWIKLyoqIENhbGN1bGF0ZXMgdGhlIG4tdGggRmlib25hY2NpIG51bWJlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIGZpYihuOiBpMzIpOiBpMzIgewogIHZhciBhID0gMCwgYiA9IDEKICBpZiAobiA+IDApIHsKICAgIHdoaWxlICgtLW4pIHsKICAgICAgbGV0IHQgPSBhICsgYgogICAgICBhID0gYgogICAgICBiID0gdAogICAgfQogICAgcmV0dXJuIGIKICB9CiAgcmV0dXJuIGEKfQoKIyFodG1sCjx0ZXh0YXJlYSBpZD0ib3V0cHV0IiBzdHlsZT0iaGVpZ2h0OiAxMDAlOyB3aWR0aDogMTAwJSIgcmVhZG9ubHk+PC90ZXh0YXJlYT4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgpjb25zdCBleHBvcnRzID0gYXdhaXQgaW5zdGFudGlhdGUoYXdhaXQgY29tcGlsZSgpLCB7IC8qIGltcG9ydHMgKi8gfSkKY29uc3Qgb3V0cHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ291dHB1dCcpCmZvciAobGV0IGkgPSAwOyBpIDw9IDEwOyArK2kpIHsKICBvdXRwdXQudmFsdWUgKz0gYGZpYigke2l9KSA9ICR7ZXhwb3J0cy5maWIoaSl9XG5gCn0KPC9zY3JpcHQ+Cg=="></iframe>
                 </section>
-            </section>
+                <section>
+                    <a href="https://blazor.net" target="_blank" rel="noopener noreferrer">
+                        <img src="img/blazor.png" width="100%" alt="blazor wasm support" srcset="">
+                    </a>
+                </section>
+                <section>
+                    <iframe width="100%" height="500px" src="https://flutterweb-wasm.web.app/#/"
+                        frameborder="0"></iframe>
+                    <p>
 
-
-            <section>
-                <section>
-                    <h2>En todo,</h2>
-                    <h2>En todas partes?</h2>
+                        <a href="https://flutter.dev/wasm">https://flutter.dev/wasm</a>
+                    </p>
                 </section>
                 <section>
-                    <h3>La Web</h3>
-                </section>
-                <section>
-                    <h3>Server Side</h3>
-                </section>
-                <section>
-                    <h3>Serverless</h3>
-                </section>
-                <section>
-                    <h3>Cloud</h3>
-                </section>
-                <section>
-                    <h3>Mobile</h3>
-                </section>
-                <section>
-                    <h3>IoT</h3>
+                    <h3>Machine Learning</h3>
+                    <img src="img/tfjs-backend-wasm.png" alt="flutter" srcset="">
                 </section>
                 <section>
                     <h3>Gaming</h3>
+                    <img src="img/unity_wasm_support.png" alt="unity wasm" srcset="">
+                    <a href="https://github.com/binji/raw-wasm" target="_blank" rel="noopener noreferrer">Arcade
+                        Games</a>
                 </section>
+                <section>
+                    <p>
+                        <iframe id="angrybots-iframe" src="https://beta.unity3d.com/jonas/AngryBots/" scrolling="no"
+                            frameborder="0" width="100%" height="500px"></iframe>
+                    </p>
+                    <a href="https://beta.unity3d.com/jonas/AngryBots/" target="_blank" rel="noopener noreferrer">
+                        AngryBots
+                    </a>
+                </section>
+                <section>
+                    <h1>WASI</h1>
+                    <p>WebAssembly System Interface</p>
+                    <p>2019</p>
+                </section>
+
+                <section>
+                    <p>
+                        Es una interfaz que permite a los modulos WASM interactuar directamente con el sistema
+                        operativo y otros
+                        programas.
+                    </p>
+                </section>
+
+                <section>
+                    <a href="https://wasmtime.dev/" target="_blank" rel="noopener noreferrer">
+
+                        <img width="50%" src="img/bytecode_alliance_logo.png" alt="">
+                        <h2>Wasmtime</h2>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://wasmer.io/" target="_blank" rel="noopener noreferrer">
+
+                        <img width="40%" src="img/wasmer_logo.png" alt="">
+                        <h2>Wasmer</h2>
+                    </a>
+                </section>
+                <section>
+                    <!-- <iframe width="100%" height="500px" src="https://webassembly.sh/"></iframe> -->
+
+                    <a href="https://webassembly.sh/" target="_blank" rel="noopener noreferrer">
+                        <img width="100%" src="img/webassemblysh.png" alt="wasmedge">
+                    </a>
+                </section>
+                <section>
+                    <img src="img/solomon_hykes_wasi.png" alt="solomon hykes wasi" srcset="">
+                </section>
+                <section>
+                    <img src="img/solomon_hykes_wasi_docker.png" alt="solomon hykes wasi" srcset="">
+                </section>
+
+                <section>
+                    <a href="https://wasmedge.org/" target="_blank" rel="noopener noreferrer">
+                        <img width="40%" src="img/wasmedge.png" alt="wasmedge">
+                    </a>
+                </section>
+                <section>
+                    <a href='https://docs.docker.com/desktop/wasm/'>
+                        <h3>Docker+Wasm (Beta)</h3>
+                    </a>
+                    <pre data-id="code-animation"><code class="language-shell" data-trim ><script type="text/template">
+# docker run --rm --runtime=io.containerd.wasmedge.v1  \
+        --platform=wasi/wasm secondstate/rust-example-hello:latest
+        
+Hello WasmEdge!
+                    </script></code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Cloud, Server Side, Serverless</h3>
+                    <a href="https://krustlet.dev/" target="_blank" rel="noopener noreferrer">
+
+                        <img width="50%" src="img/krustlet_logo.png" alt="">
+                    </a>
+                </section>
+                <section>
+                    <h1>Wasm3</h1>
+                </section>
+                <section>
+
+                    <h3>IoT</h3>
+                    <a href="https://github.com/wasm3/embedded-wasm-apps" target="_blank" rel="noopener noreferrer">
+                        <img width="100%" src="img/iot_wasm_pipe.png" alt="">
+                    </a>
+                </section>
+
+
+
             </section>
             <section>
                 <section>
-                    <h1>WASMTIME</h1>
+                    <p>Parte 3:</p>
+                    <h1 class="red">All at once</h1>
+                    <p>(Al mismo tiempo)</p>
                 </section>
                 <section>
-                    <h1>WASMER</h1>
+                    <img width="70%" src="img/cloud_tech_wasm.png" alt="cloud_wasm">
                 </section>
                 <section>
-                    <h1>WASMEDGE</h1>
+                    <img width="70%" src="img/iot_wasm.png" alt="iot_wasm">
+                </section>
+                <section>
+                    <img width="70%" src="img/programming_wasm.png" alt="cloud_wasm">
+                </section>
+                <section>
+                    <img width="100%" src="img/cloud_wasm.png" alt="cloud_wasm">
                 </section>
             </section>
-            <section>
-                <section>
-                    <a href='https://docs.docker.com/desktop/wasm/'><h1>Docker+Wasm (Beta)</h1></a>
-                </section>
-            </section>
+
         </div>
     </div>
+
     <script src="revealjs/dist/reveal.js"></script>
     <script src="revealjs/plugin/notes/notes.js"></script>
     <script src="revealjs/plugin/markdown/markdown.js"></script>
@@ -213,6 +404,26 @@
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+    <script>
+        function manageMedia(event) {
+            // event.currentSlide, event.indexh, event.indexv
+            document.getElementById('space-travel').style.display = 'none';
+            if (event.currentSlide.id === 'black-slide') {
+                document.getElementById('space-travel').style.display = 'block';
+            }
+
+            if (event.currentSlide.id === 'everything') {
+                document.getElementById('space-travel').style.display = 'none';
+            }
+        }
+        Reveal.on('ready', event => {
+            manageMedia(event)
+        });
+
+        Reveal.addEventListener('slidechanged', function (event) {
+            manageMedia(event)
         });
     </script>
 </body>
