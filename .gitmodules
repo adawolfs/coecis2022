@@ -1,6 +1,0 @@
-[submodule "revealjs"]
-	path = revealjs
-	url = git@github.com:adawolfs/reveal.js.git
-[submodule "wasm"]
-	path = wasm
-	url = git@github.com:adawolfs/wasm-examples.git
