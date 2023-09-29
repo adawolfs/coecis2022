@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASM Everywhere</title>
     <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
     <link rel="stylesheet" href="revealjs/dist/reset.css">
     <link rel="stylesheet" href="revealjs/dist/reveal.css">
     <link rel="stylesheet" href="revealjs/dist/theme/black.css">
+    <script src="https://unpkg.com/powerglitch@latest/dist/powerglitch.min.js"></script>
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
     <style>
@@ -90,15 +91,21 @@
             max-width: 100% !important;
             max-height: 100% !important;
         }
+
+        .background-color-0C0A0C {
+            background-color: #0C0A0C !important;
+        }
     </style>
 
 </head>
 
-<body>
+<body id="body">
     <div class="reveal">
-        <img id="space-travel" class="full-screen" src="img/loop.gif" alt="">
+        <img id="space-travel" class="glitch full-screen" src="img/loop.gif" alt="">
+        
         <div class="slides">
             <section id="black-slide">
+                <!-- <img  class="glitch" src="img/transparent_donut_sm.gif" alt="donut"> -->
             </section>
             <section>
                 <section>
@@ -170,12 +177,12 @@
             </section>
             <section>
                 <section>
-                    <h1>WebAssembly</h1> On Everything Everywhere All at Once
+                    <h1 class="glitch">WebAssembly</h1> On Everything Everywhere All at Once
                 </section>
                 <section>
                     <h2>@adawolfs</h2>
                     <br>
-                    I'm not an expert, but I understand the movie.
+                    I'm <span class="glitch">not an expert</span>, but I understood the movie.
                 </section>
             </section>
             <section>
@@ -185,8 +192,6 @@
                     <p>(El Todo)</p>
                 </section>
 
-
-
                 <section>
                     <h1>WebAssembly</h1>
                     <p>2017</p>
@@ -194,17 +199,10 @@
 
                 <section>
                     <p>
-                        Un conjunto de instrucciones binarias para una <b>maquina virtual de pila</b>.
-                        Fue diseñado para proveer un formato de codigo compilable y portable para otros lenguajes de
-                        programacion.
+                        It's a binary instruction format for a <span class="glitch"><b>stack-based virtual machine</b></span>. 
+                        It's designed to provide a portable, size- and load-time-efficient format.
                     </p>
                 </section>
-                <section>
-                    <p>
-                        Busca brindar entornos de ejecucion rapidos, livianos, portables y seguros.
-                    </p>
-                </section>
-
                 <section>
                     <h1>.WAT</h1>
                     <p>WebAssembly Text File</p>
@@ -229,13 +227,25 @@
                 </section>
                 <section>
                     <p>
-                        Formato binario con una representacion compacta y eficiente en tamaño y tiempo de carga.
+                        Binary format with a compact and efficient representation in size and load time.
                     </p>
                 </section>
                 <section>
-                    <b>Lenguages que pueden compilarse en WASM</b>
-                    <p>C, C++, C#, Java, Kotlin, Python, PHP, Ruby, Rust, Scala, Swift</p>
+                    <b>Languages that could be compiled to WASM</b>
+                    <p>C, C++, C#, Go, Java, Kotlin, Python, PHP, Ruby, <span class="glitch">Rust</span>, Scala, Swift</p>
                 </section>
+                <section>
+                    <h1>WASI</h1>
+                    <p>WebAssembly <span class="glitch">System Interface</span></p>
+                    <p>2019</p>
+                </section>
+                <section>
+                    <p>
+                        It's an interface that allows WASM modules to <span class="glitch">interact</span> directly with the <span class="glitch">operating system</span> and
+                        other programs.
+                    </p>
+                </section>
+
             </section>
             <section>
                 <section>
@@ -244,7 +254,7 @@
                     <p>(En todas partes)</p>
                 </section>
                 <section>
-                    <h1> <span class="red">W</span><span class="blue">E</span><span class="green">B</span></h1>
+                    <h1 class="glitch"> <span class="red">W</span><span class="blue">E</span><span class="green">B</span></h1>
                     <p> Chrome, Firefox y Safari</p>
                 </section>
 
@@ -287,19 +297,8 @@
                         AngryBots
                     </a>
                 </section>
-                <section>
-                    <h1>WASI</h1>
-                    <p>WebAssembly System Interface</p>
-                    <p>2019</p>
-                </section>
-
-                <section>
-                    <p>
-                        Es una interfaz que permite a los modulos WASM interactuar directamente con el sistema
-                        operativo y otros
-                        programas.
-                    </p>
-                </section>
+                
+             
 
                 <section>
                     <a href="https://wasmtime.dev/" target="_blank" rel="noopener noreferrer">
@@ -387,7 +386,25 @@ Hello WasmEdge!
                     <img width="100%" src="img/cloud_wasm.png" alt="cloud_wasm">
                 </section>
             </section>
-
+            <section>
+                <section>
+                    <h3>DEMO</h3>
+                    <pre data-id="code-animation"><code class="language-shell" data-trim ><script type="text/template">
+                        git clone https://github.com/adawolfs/wasm-everywhere.git
+                        git submodule update --init --recursive 
+                        cd wasm-examples
+                        code .
+                        code c
+                        code rust
+                        code go
+                    </script></code></pre>
+                    
+                </section>
+            
+            </section>
+            <section id="donut-slide" >
+                <img  class="glitch" src="img/donut.gif" alt="donut">
+            </section>
         </div>
     </div>
 
@@ -414,6 +431,9 @@ Hello WasmEdge!
                 document.getElementById('space-travel').style.display = 'block';
             }
 
+            if (event.currentSlide.id === 'donut-slide') {
+            }
+
             if (event.currentSlide.id === 'everything') {
                 document.getElementById('space-travel').style.display = 'none';
             }
@@ -425,6 +445,9 @@ Hello WasmEdge!
         Reveal.addEventListener('slidechanged', function (event) {
             manageMedia(event)
         });
+    </script>
+    <script>
+        PowerGlitch.glitch('.glitch')
     </script>
 </body>
 

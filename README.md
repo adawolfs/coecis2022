@@ -3,12 +3,17 @@
 
 ## Slides
 
-[Slides](https://adawolfs.github.io/wasm-everywhere)
+[https://adawolfs.github.io/wasm-everywhere](https://adawolfs.github.io/wasm-everywhere)
 
 ## Clone
 
 ```bash
-git clone
-git submodules update --init --recursive
+git clone https://github.com/adawolfs/wasm-everywhere.git
+git submodule update --init --recursive 
+cd wasm-examples
+code .
+code c
+code rust
+code go
 ```
 
