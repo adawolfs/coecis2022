@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASM Everywhere</title>
     <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
@@ -88,12 +88,67 @@
             left: 0;
             width: 100vw;
             height: 100vh;
+            margin: 0 !important;
             max-width: 100% !important;
             max-height: 100% !important;
         }
 
+        .bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0 !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0 !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 0 !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
+
+        .top-center {
+            position: absolute;
+            top: 10%;
+            left: 32%;
+            height: 25vh;
+            
+            margin: 0 !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            /* transform: translate(-50%, 0)!important; */
+        }
+
+        .event-logo {
+            bottom: 5%;
+            right: 2%;
+            height: 15vh;
+        }
+
         .background-color-0C0A0C {
             background-color: #0C0A0C !important;
+        }
+        .stack-images {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .stack-images img {
+            position: absolute; 
         }
     </style>
 
@@ -101,8 +156,25 @@
 
 <body id="body">
     <div class="reveal">
-        <img id="space-travel" class="glitch full-screen" src="img/loop.gif" alt="">
+
+        <img id="space-travel-background" class="glitch full-screen space-travel-background" src="img/loop.gif" alt="">
+        <!-- <img id="event-background" class="glitch-03 full-screen event-background" src="img/aws/aws-community-day-background.png" alt=""> -->
+        <!-- <img id="event-logo" class="glitch-event-logo bottom-right event-logo" src="img/aws/aws-community-day-logo.png" alt=""> -->
+        <img class="top-right aws-decoration event-background" src="img/aws/aws-community-day-top-right.png" alt="">
+        <img class="bottom-left aws-decoration event-background" src="img/aws/aws-community-day-bottom-left.png" alt="">
+        <!-- <img class="top-center aws-decoration event-background" src="img/aws/aws-community-day-logo.png" alt=""> -->
+
+        <img class="top-center glitch-event-logo aws-decoration event-background" src="img/aws/aws-communtity-day-logo-b1.png" alt="">
+        <img class="top-center aws-decoration event-background" src="img/aws/aws-communtity-day-logo-b3.png" alt="">
+        <img class="top-center aws-decoration event-background" src="img/aws/aws-communtity-day-logo-b4.png" alt="">
+
+        <img class="glitch-event-logo bottom-right event-logo" src="img/aws/aws-communtity-day-logo-b1.png" alt="">
+        <img class="bottom-right event-logo" src="img/aws/aws-communtity-day-logo-b3.png" alt="">
+        <img class="bottom-right event-logo" src="img/aws/aws-communtity-day-logo-b4.png" alt="">
         
+
+
+
         <div class="slides">
             <section id="black-slide">
                 <!-- <img  class="glitch" src="img/transparent_donut_sm.gif" alt="donut"> -->
@@ -162,7 +234,7 @@
                     </p>
                 </section>
                 <section>
-                    <pre data-id="code-animation"><code class="hljs" data-trim ><script type="text/template">
+                    <pre data-id="code-animation"><code class="hljs glitch-02" data-trim ><script type="text/template">
                             function strlen(ptr) {
                                 ptr = ptr|0;
                                 var curr = 0;
@@ -176,7 +248,9 @@
                 </section>
             </section>
             <section>
-                <section>
+                <section id="title-page">
+                    <br>
+                    <br>
                     <h1 class="glitch">WebAssembly</h1> On Everything Everywhere All at Once
                 </section>
                 <section>
@@ -199,7 +273,8 @@
 
                 <section>
                     <p>
-                        It's a binary instruction format for a <span class="glitch"><b>stack-based virtual machine</b></span>. 
+                        It's a binary instruction format for a <span class="glitch"><b>stack-based virtual
+                                machine</b></span>.
                         It's designed to provide a portable, size- and load-time-efficient format.
                     </p>
                 </section>
@@ -232,7 +307,8 @@
                 </section>
                 <section>
                     <b>Languages that could be compiled to WASM</b>
-                    <p>C, C++, C#, Go, Java, Kotlin, Python, PHP, Ruby, <span class="glitch">Rust</span>, Scala, Swift</p>
+                    <p>C, C++, C#, Go, Java, Kotlin, Python, PHP, Ruby, <span class="glitch">Rust</span>, Scala, Swift
+                    </p>
                 </section>
                 <section>
                     <h1>WASI</h1>
@@ -241,7 +317,8 @@
                 </section>
                 <section>
                     <p>
-                        It's an interface that allows WASM modules to <span class="glitch">interact</span> directly with the <span class="glitch">operating system</span> and
+                        It's an interface that allows WASM modules to <span class="glitch">interact</span> directly with
+                        the <span class="glitch">operating system</span> and
                         other programs.
                     </p>
                 </section>
@@ -254,7 +331,8 @@
                     <p>(En todas partes)</p>
                 </section>
                 <section>
-                    <h1 class="glitch"> <span class="red">W</span><span class="blue">E</span><span class="green">B</span></h1>
+                    <h1 class="glitch"> <span class="red">W</span><span class="blue">E</span><span
+                            class="green">B</span></h1>
                     <p> Chrome, Firefox y Safari</p>
                 </section>
 
@@ -297,8 +375,8 @@
                         AngryBots
                     </a>
                 </section>
-                
-             
+
+
 
                 <section>
                     <a href="https://wasmtime.dev/" target="_blank" rel="noopener noreferrer">
@@ -398,12 +476,12 @@ Hello WasmEdge!
                         code rust
                         code go
                     </script></code></pre>
-                    
+
                 </section>
-            
+
             </section>
-            <section id="donut-slide" >
-                <img  class="glitch" src="img/donut.gif" alt="donut">
+            <section id="donut-slide">
+                <img class="glitch" src="img/transparent_donut_sm.gif" alt="donut">
             </section>
         </div>
     </div>
@@ -424,11 +502,31 @@ Hello WasmEdge!
         });
     </script>
     <script>
+        function hideGlitchedImage(className) {
+            for (element of document.getElementsByClassName(className)) {
+                element.style.display = 'none';
+            }
+        }
+        function showGlitchedImage(className) {
+            for (element of document.getElementsByClassName(className)) {
+                element.style.display = 'block';
+            }
+        }
         function manageMedia(event) {
             // event.currentSlide, event.indexh, event.indexv
-            document.getElementById('space-travel').style.display = 'none';
+            document.getElementById('space-travel-background').style.display = 'none';
+            hideGlitchedImage('event-background');
+            showGlitchedImage('event-logo');
             if (event.currentSlide.id === 'black-slide') {
-                document.getElementById('space-travel').style.display = 'block';
+                hideGlitchedImage('event-logo');
+                document.getElementById('space-travel-background').style.display = 'block';
+            }
+
+            if (event.currentSlide.id === 'title-page') {
+                for (element of document.getElementsByClassName('event-background')) {
+                    element.style.display = 'block';
+                }
+                hideGlitchedImage('event-logo');
             }
 
             if (event.currentSlide.id === 'donut-slide') {
@@ -448,6 +546,94 @@ Hello WasmEdge!
     </script>
     <script>
         PowerGlitch.glitch('.glitch')
+        PowerGlitch.glitch(
+            '.glitch-hover',
+            {
+                playMode: 'hover',
+            }
+        )
+        PowerGlitch.glitch(
+            '.glitch-02',
+            {
+                glitchTimeSpan: {
+                    start: 0.8,
+                    end: 1,
+                },
+            }
+        )
+        PowerGlitch.glitch(
+            '.glitch-03',
+            {
+                glitchTimeSpan: {
+                    start: 0.3,
+                    end: 0.6,
+                },
+                shake: {
+                    velocity: 10,
+                    amplitudeX: 0.4,
+                    amplitudeY: 0.4,
+                },
+                slice: {
+                    count: 10,
+                    velocity: 10,
+                    minHeight: 0.02,
+                    maxHeight: 0.4,
+                    hueRotate: true,
+                },
+                pulse: {
+                    scale: 1,
+                }
+            }
+        )
+        PowerGlitch.glitch(
+            '.glitch-event-logo',
+            {
+                glitchTimeSpan: {
+                    start: 0,
+                    end: 0.8,
+                },
+                shake: {
+                    velocity: 10,
+                    amplitudeX: 0.05,
+                    amplitudeY: 0.05,
+                },
+                slice: {
+                    count: 2,
+                    velocity: 10,
+                    minHeight: 0.02,
+                    maxHeight: 0.1,
+                    hueRotate: true,
+                },
+            }
+        )
+        PowerGlitch.glitch(
+            '.glitch-01',
+            {
+                playMode: 'always',
+                hideOverflow: true,
+                timing: {
+                    duration: 1000,
+                    iterations: 15,
+                    easing: 'ease-in-out',
+                },
+                glitchTimeSpan: {
+                    start: 0.4,
+                    end: 0.7,
+                },
+                shake: {
+                    velocity: 10,
+                    amplitudeX: 0.4,
+                    amplitudeY: 0.4,
+                },
+                slice: {
+                    count: 4,
+                    velocity: 10,
+                    minHeight: 0.02,
+                    maxHeight: 0.40,
+                    hueRotate: true,
+                },
+            }
+        )
     </script>
 </body>
 
