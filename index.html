@@ -157,8 +157,9 @@
         .stack-images img {
             position: absolute;
         }
+
         .row {
-           display: flex;
+            display: flex;
         }
 
         .column {
@@ -310,7 +311,8 @@
 
                     <a href="https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="img/the_birth_and_death_of_javascript.png" class="glitch" width="100%" alt="asmjs"></a>
+                        <img src="img/the_birth_and_death_of_javascript.png" class="glitch" width="100%"
+                            alt="asmjs"></a>
 
                 </section>
             </section>
@@ -342,7 +344,7 @@
                     <p>
                         It's a binary instruction format for a <span class="glitch"><b>stack-based virtual
                                 machine</b></span>.
-                        It's designed to provide a portable, size- and load-time-efficient format.
+                        It's designed to provide a portable, secure, size- and load-time-efficient format.
                     </p>
                 </section>
                 <section>
@@ -364,8 +366,8 @@
                     </script></code></pre>
                 </section>
                 <section>
-                    <h1>.WASM</h1>
-                    <p>WebAssembly Binary File</p>
+                    <h1>.<span class=" glitch">WASM</span></h1>
+                    <p><span class="glitch">WebAssembly</span> Binary File</p>
                 </section>
                 <section>
                     <p>
@@ -380,8 +382,8 @@
                     <img src="img/wasm-portability_2.png" width="70%" alt="wasm portability" srcset="">
                 </section>
                 <section>
-                    <h1>Security</h1>
-                    <p></p>
+                    <h2>Security Model</h2>
+                    <img src="img/wasm-malicious-secured-2.png" width="70%" alt="wasm portability" class="r-stretch" srcset="">
                 </section>
                 <section>
                     <b>Languages that could be compiled to WASM</b>
@@ -406,10 +408,10 @@
                 <section>
                     <h1 class="glitch"> <span class="red">W</span><span class="blue">E</span><span
                             class="green">B</span></h1>
-                            <p> Chrome, Firefox y Safari</p>
-                        </section>
-                        <section>
-                            <h1>WASI</h1>
+                    <p> Chrome, Firefox y Safari</p>
+                </section>
+                <section>
+                    <h1>WASI</h1>
                     <p>WebAssembly <span class="glitch">System Interface</span></p>
                     <p>2019</p>
                 </section>
@@ -452,7 +454,23 @@
                             <p class="fragment">Messaging</p>
                             <p class="fragment">Blob Storage</p>
                         </div>
-                      </div>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="glitch-03">Worlds</h2>
+                    <pre data-id="code-animation"><code class="language-shell" data-trim ><script type="text/template">
+                        package wasi:cloud-core
+
+                        world cloud-core {
+                            include wasi:keyvalue
+                            include wasi:blob-store
+                            include wasi:messaging
+                            include wasi:sql
+                            include wasi:runtime-config
+                            include wasi:distributed-locking
+                            include wasi:http
+                        }
+                    </script></code></pre>
                 </section>
                 <section>
                     <a href="https://wasmtime.dev/" target="_blank" rel="noopener noreferrer">
@@ -489,21 +507,21 @@
                     <h1 class="red">All at once</h1>
                     <p>(Al mismo tiempo)</p>
                 </section>
-                
+
                 <section>
                     <h2>Fibonnaci</h2>
                     <iframe width="100%" height="500px" title="Editor"
-                    src="https://www.assemblyscript.org/editor.html#IyFydW50aW1lPXN0dWIKLyoqIENhbGN1bGF0ZXMgdGhlIG4tdGggRmlib25hY2NpIG51bWJlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIGZpYihuOiBpMzIpOiBpMzIgewogIHZhciBhID0gMCwgYiA9IDEKICBpZiAobiA+IDApIHsKICAgIHdoaWxlICgtLW4pIHsKICAgICAgbGV0IHQgPSBhICsgYgogICAgICBhID0gYgogICAgICBiID0gdAogICAgfQogICAgcmV0dXJuIGIKICB9CiAgcmV0dXJuIGEKfQoKIyFodG1sCjx0ZXh0YXJlYSBpZD0ib3V0cHV0IiBzdHlsZT0iaGVpZ2h0OiAxMDAlOyB3aWR0aDogMTAwJSIgcmVhZG9ubHk+PC90ZXh0YXJlYT4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgpjb25zdCBleHBvcnRzID0gYXdhaXQgaW5zdGFudGlhdGUoYXdhaXQgY29tcGlsZSgpLCB7IC8qIGltcG9ydHMgKi8gfSkKY29uc3Qgb3V0cHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ291dHB1dCcpCmZvciAobGV0IGkgPSAwOyBpIDw9IDEwOyArK2kpIHsKICBvdXRwdXQudmFsdWUgKz0gYGZpYigke2l9KSA9ICR7ZXhwb3J0cy5maWIoaSl9XG5gCn0KPC9zY3JpcHQ+Cg=="></iframe>
+                        src="https://www.assemblyscript.org/editor.html#IyFydW50aW1lPXN0dWIKLyoqIENhbGN1bGF0ZXMgdGhlIG4tdGggRmlib25hY2NpIG51bWJlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIGZpYihuOiBpMzIpOiBpMzIgewogIHZhciBhID0gMCwgYiA9IDEKICBpZiAobiA+IDApIHsKICAgIHdoaWxlICgtLW4pIHsKICAgICAgbGV0IHQgPSBhICsgYgogICAgICBhID0gYgogICAgICBiID0gdAogICAgfQogICAgcmV0dXJuIGIKICB9CiAgcmV0dXJuIGEKfQoKIyFodG1sCjx0ZXh0YXJlYSBpZD0ib3V0cHV0IiBzdHlsZT0iaGVpZ2h0OiAxMDAlOyB3aWR0aDogMTAwJSIgcmVhZG9ubHk+PC90ZXh0YXJlYT4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgpjb25zdCBleHBvcnRzID0gYXdhaXQgaW5zdGFudGlhdGUoYXdhaXQgY29tcGlsZSgpLCB7IC8qIGltcG9ydHMgKi8gfSkKY29uc3Qgb3V0cHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ291dHB1dCcpCmZvciAobGV0IGkgPSAwOyBpIDw9IDEwOyArK2kpIHsKICBvdXRwdXQudmFsdWUgKz0gYGZpYigke2l9KSA9ICR7ZXhwb3J0cy5maWIoaSl9XG5gCn0KPC9zY3JpcHQ+Cg=="></iframe>
                 </section>
                 <section>
                     <h2>Game of Life</h2>
                     <iframe width="100%" height="500px" title="Editor"
-                    src="https://www.assemblyscript.org/editor.html#IyFvcHRpbWl6ZT1zcGVlZCZydW50aW1lPXN0dWImaW1wb3J0TWVtb3J5JnVzZT1NYXRoPUpTTWF0aAovLyBDb25maWd1cmF0aW9uIGltcG9ydGVkIGZyb20gSlMKZGVjbGFyZSBjb25zdCBCR1JfQUxJVkU6IHUzMjsKZGVjbGFyZSBjb25zdCBCR1JfREVBRDogdTMyOwpkZWNsYXJlIGNvbnN0IEJJVF9ST1Q6IHUzMjsKCnZhciB3aWR0aDogaTMyLCBoZWlnaHQ6IGkzMiwgb2Zmc2V0OiBpMzI7CgovKiogR2V0cyBhbiBpbnB1dCBwaXhlbCBpbiB0aGUgcmFuZ2UgWzAsIHNdLiAqLwpAaW5saW5lCmZ1bmN0aW9uIGdldCh4OiB1MzIsIHk6IHUzMik6IHUzMiB7CiAgcmV0dXJuIGxvYWQ8dTMyPigoeSAqIHdpZHRoICsgeCkgPDwgMik7Cn0KCi8qKiBTZXRzIGFuIG91dHB1dCBwaXhlbCBpbiB0aGUgcmFuZ2UgW3MsIDIqc10uICovCkBpbmxpbmUKZnVuY3Rpb24gc2V0KHg6IHUzMiwgeTogdTMyLCB2OiB1MzIpOiB2b2lkIHsKICBzdG9yZTx1MzI+KChvZmZzZXQgKyB5ICogd2lkdGggKyB4KSA8PCAyLCB2KTsKfQoKLyoqIFNldHMgYW4gb3V0cHV0IHBpeGVsIGluIHRoZSByYW5nZSBbcywgMipzXSB3aGlsZSBmYWRpbmcgaXQgb3V0LiAqLwpAaW5saW5lCmZ1bmN0aW9uIHJvdCh4OiB1MzIsIHk6IHUzMiwgdjogdTMyKTogdm9pZCB7CiAgdmFyIGFscGhhID0gbWF4PGkzMj4oKHYgPj4gMjQpIC0gQklUX1JPVCwgMCk7CiAgc2V0KHgsIHksIChhbHBoYSA8PCAyNCkgfCAodiAmIDB4MDBmZmZmZmYpKTsKfQoKLyoqIEluaXRpYWxpemVzIHdpZHRoIGFuZCBoZWlnaHQuIENhbGxlZCBvbmNlIGZyb20gSlMuICovCmV4cG9ydCBmdW5jdGlvbiBpbml0KHc6IGkzMiwgaDogaTMyKTogdm9pZCB7CiAgd2lkdGggID0gdzsKICBoZWlnaHQgPSBoOwogIG9mZnNldCA9IHcgKiBoOwoKICAvLyBTdGFydCBieSBmaWxsaW5nIG91dHB1dCB3aXRoIHJhbmRvbSBsaXZlIGNlbGxzLgogIGZvciAobGV0IHkgPSAwOyB5IDwgaDsgKyt5KSB7CiAgICBmb3IgKGxldCB4ID0gMDsgeCA8IHc7ICsreCkgewogICAgICBsZXQgYyA9IE1hdGgucmFuZG9tKCkgPiAwLjEKICAgICAgICA/IEJHUl9ERUFEICAmIDB4MDBmZmZmZmYKICAgICAgICA6IEJHUl9BTElWRSB8IDB4ZmYwMDAwMDA7CiAgICAgIHNldCh4LCB5LCBjKTsKICAgIH0KICB9Cn0KCi8qKiBQZXJmb3JtcyBvbmUgc3RlcC4gQ2FsbGVkIGFib3V0IDMwIHRpbWVzIGEgc2Vjb25kIGZyb20gSlMuICovCmV4cG9ydCBmdW5jdGlvbiBzdGVwKCk6IHZvaWQgewogIHZhciB3ID0gd2lkdGgsCiAgICAgIGggPSBoZWlnaHQ7CgogIHZhciBobTEgPSBoIC0gMSwgLy8gaCAtIDEKICAgICAgd20xID0gdyAtIDE7IC8vIHcgLSAxCgogIC8vIFRoZSB1bml2ZXJzZSBvZiB0aGUgR2FtZSBvZiBMaWZlIGlzIGFuIGluZmluaXRlIHR3by1kaW1lbnNpb25hbCBvcnRob2dvbmFsIGdyaWQgb2Ygc3F1YXJlCiAgLy8gImNlbGxzIiwgZWFjaCBvZiB3aGljaCBpcyBpbiBvbmUgb2YgdHdvIHBvc3NpYmxlIHN0YXRlcywgYWxpdmUgb3IgZGVhZC4KICBmb3IgKGxldCB5ID0gMDsgeSA8IGg7ICsreSkgewogICAgbGV0IHltMSA9IHkgPT0gMCA/IGhtMSA6IHkgLSAxLAogICAgICAgIHlwMSA9IHkgPT0gaG0xID8gMCA6IHkgKyAxOwogICAgZm9yIChsZXQgeCA9IDA7IHggPCB3OyArK3gpIHsKICAgICAgbGV0IHhtMSA9IHggPT0gMCA/IHdtMSA6IHggLSAxLAogICAgICAgICAgeHAxID0geCA9PSB3bTEgPyAwIDogeCArIDE7CgogICAgICAvLyBFdmVyeSBjZWxsIGludGVyYWN0cyB3aXRoIGl0cyBlaWdodCBuZWlnaGJvdXJzLCB3aGljaCBhcmUgdGhlIGNlbGxzIHRoYXQgYXJlIGhvcml6b250YWxseSwKICAgICAgLy8gdmVydGljYWxseSwgb3IgZGlhZ29uYWxseSBhZGphY2VudC4gTGVhc3Qgc2lnbmlmaWNhbnQgYml0IGluZGljYXRlcyBhbGl2ZSBvciBkZWFkLgogICAgICBsZXQgYWxpdmVOZWlnaGJvcnMgPSAoCiAgICAgICAgKGdldCh4bTEsIHltMSkgJiAxKSArIChnZXQoeCwgeW0xKSAmIDEpICsgKGdldCh4cDEsIHltMSkgJiAxKSArCiAgICAgICAgKGdldCh4bTEsIHkgICkgJiAxKSAgICAgICAgICAgICAgICAgICAgICsgKGdldCh4cDEsIHkgICkgJiAxKSArCiAgICAgICAgKGdldCh4bTEsIHlwMSkgJiAxKSArIChnZXQoeCwgeXAxKSAmIDEpICsgKGdldCh4cDEsIHlwMSkgJiAxKQogICAgICApOwoKICAgICAgbGV0IHNlbGYgPSBnZXQoeCwgeSk7CiAgICAgIGlmIChzZWxmICYgMSkgewogICAgICAgIC8vIEEgbGl2ZSBjZWxsIHdpdGggMiBvciAzIGxpdmUgbmVpZ2hib3JzIHJvdHMgb24gdG8gdGhlIG5leHQgZ2VuZXJhdGlvbi4KICAgICAgICBpZiAoKGFsaXZlTmVpZ2hib3JzICYgMGIxMTEwKSA9PSAwYjAwMTApIHJvdCh4LCB5LCBzZWxmKTsKICAgICAgICAvLyBBIGxpdmUgY2VsbCB3aXRoIGZld2VyIHRoYW4gMiBvciBtb3JlIHRoYW4gMyBsaXZlIG5laWdoYm9ycyBkaWVzLgogICAgICAgIGVsc2Ugc2V0KHgsIHksIEJHUl9ERUFEIHwgMHhmZjAwMDAwMCk7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgLy8gQSBkZWFkIGNlbGwgd2l0aCBleGFjdGx5IDMgbGl2ZSBuZWlnaGJvcnMgYmVjb21lcyBhIGxpdmUgY2VsbC4KICAgICAgICBpZiAoYWxpdmVOZWlnaGJvcnMgPT0gMykgc2V0KHgsIHksIEJHUl9BTElWRSB8IDB4ZmYwMDAwMDApOwogICAgICAgIC8vIEEgZGVhZCBjZWxsIHdpdGggZmV3ZXIgb3IgbW9yZSB0aGFuIDMgbGl2ZSBuZWlnaGJvcnMganVzdCByb3RzLgogICAgICAgIGVsc2Ugcm90KHgsIHksIHNlbGYpOwogICAgICB9CiAgICB9CiAgfQp9CgoKLyoqIENyZWF0ZXMgYSBwb2ludCBhdCBgeGAgYW5kIGB5YCBjZWxsLiAqLwpleHBvcnQgZnVuY3Rpb24gcG9pbnQoeDogdTMyLCB5OiB1MzIsIHA6IGY2NCk6IHZvaWQgewogICBzZXQoeCwgeSwgQkdSX0FMSVZFIHwgMHhmZjAwMDAwMCk7Cn0KCi8qKiBGaWxscyB0aGUgcm93IGFuZCBjb2x1bW4gaW5kaWNhdGVkIGJ5IGB4YCBhbmQgYHlgIHdpdGggcmFuZG9tIGxpdmUgY2VsbHMuICovCmV4cG9ydCBmdW5jdGlvbiBmaWxsKHg6IHUzMiwgeTogdTMyLCBwOiBmNjQpOiB2b2lkIHsKICBmb3IgKGxldCBpeCA9IDA7IGl4IDwgd2lkdGg7ICsraXgpIHsKICAgIGlmIChNYXRoLnJhbmRvbSgpIDwgcCkgc2V0KGl4LCB5LCBCR1JfQUxJVkUgfCAweGZmMDAwMDAwKTsKICB9CiAgZm9yIChsZXQgaXkgPSAwOyBpeSA8IGhlaWdodDsgKytpeSkgewogICAgaWYgKE1hdGgucmFuZG9tKCkgPCBwKSBzZXQoeCwgaXksIEJHUl9BTElWRSB8IDB4ZmYwMDAwMDApOwogIH0KfQoKIyFodG1sCjxjYW52YXMgaWQ9ImNhbnZhcyIgc3R5bGU9IndpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IGJhY2tncm91bmQ6ICMwMDA7IGN1cnNvcjogY3Jvc3NoYWlyIj48L2NhbnZhcz4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgovLyBDb25maWd1cmF0aW9uCmNvbnN0IFJHQl9BTElWRSA9IDB4RDM5MkU2Owpjb25zdCBSR0JfREVBRCAgPSAweEE2MUI4NTsKY29uc3QgQklUX1JPVCAgID0gMTAwOwoKLy8gU2V0IHVwIHRoZSBjYW52YXMgd2l0aCBhIDJEIHJlbmRlcmluZyBjb250ZXh0CmNvbnN0IGNhbnZhcyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJjYW52YXMiKTsKY29uc3QgYm91bmRpbmdSZWN0ID0gY2FudmFzLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpOwpjb25zdCBjdHggPSBjYW52YXMuZ2V0Q29udGV4dCgiMmQiKTsKCi8vIENvbXB1dGUgdGhlIHNpemUgb2YgdGhlIHVuaXZlcnNlICgyIHBpeGVscyBwZXIgY2VsbCkKY29uc3Qgd2lkdGggPSBib3VuZGluZ1JlY3Qud2lkdGggPj4+IDU7CmNvbnN0IGhlaWdodCA9IGJvdW5kaW5nUmVjdC5oZWlnaHQgPj4+IDU7CmNvbnN0IHNpemUgPSB3aWR0aCAqIGhlaWdodDsKY29uc3QgYnl0ZVNpemUgPSAoc2l6ZSArIHNpemUpIDw8IDEwOyAvLyBpbnB1dCAmIG91dHB1dCAoNCBieXRlcyBwZXIgY2VsbCkKCmNhbnZhcy53aWR0aCA9IHdpZHRoOwpjYW52YXMuaGVpZ2h0ID0gaGVpZ2h0OwpjYW52YXMuc3R5bGUuaW1hZ2VSZW5kZXJpbmcgPSAicGl4ZWxhdGVkIjsKY3R4LmltYWdlU21vb3RoaW5nRW5hYmxlZCA9IGZhbHNlOwoKLy8gQ29tcHV0ZSB0aGUgc2l6ZSBvZiBhbmQgaW5zdGFudGlhdGUgdGhlIG1vZHVsZSdzIG1lbW9yeQpjb25zdCBtZW1vcnkgPSBuZXcgV2ViQXNzZW1ibHkuTWVtb3J5KHsgaW5pdGlhbDogKChieXRlU2l6ZSArIDB4ZmZmZikgJiB+MHhmZmZmKSA+Pj4gMTYgfSk7CgovLyBDb21waWxlIGFuZCBpbnN0YW50aWF0ZSB0aGUgbW9kdWxlCmNvbnN0IGV4cG9ydHMgPSBhd2FpdCBpbnN0YW50aWF0ZShhd2FpdCBjb21waWxlKCksIHsKICBlbnY6IHsKICAgIG1lbW9yeQogIH0sCiAgbW9kdWxlOiB7CiAgICBCR1JfQUxJVkUgOiByZ2IyYmdyKFJHQl9BTElWRSkgfCAxLCAvLyBMU0Igc2V0IGluZGljYXRlcyBhbGl2ZQogICAgQkdSX0RFQUQgIDogcmdiMmJncihSR0JfREVBRCkgJiB+MSwgLy8gTFNCIG5vdCBzZXQgaW5kaWNhdGVzIGRlYWQKICAgIEJJVF9ST1QKICB9Cn0pOwoKLy8gSW5pdGlhbGl6ZSB0aGUgbW9kdWxlIHdpdGggdGhlIHVuaXZlcnNlJ3Mgd2lkdGggYW5kIGhlaWdodApleHBvcnRzLmluaXQod2lkdGgsIGhlaWdodCk7Cgp2YXIgYnVmZmVyID0gbmV3IFVpbnQzMkFycmF5KG1lbW9yeS5idWZmZXIpOwp2YXIgcGF1c2UgPSBmYWxzZTsKClsgW2RvY3VtZW50LCAia2V5dXAiXSwKXS5mb3JFYWNoKGVoID0+IGVoWzBdLmFkZEV2ZW50TGlzdGVuZXIoZWhbMV0sIGUgPT4gewogaWYgKGUua2V5ID09ICIgIiB8fAogICAgICBlLmNvZGUgPT0gIlNwYWNlIiB8fCAgICAgIAogICAgICBlLmtleUNvZGUgPT0gMzIgICAgICAKICApIHsKICAgIHBhdXNlID0gIXBhdXNlOwogIH19KSk7CgoKCi8vIFVwZGF0ZSBhYm91dCAzMCB0aW1lcyBhIHNlY29uZAooZnVuY3Rpb24gdXBkYXRlKCkgewogIHNldFRpbWVvdXQodXBkYXRlLCAxMDApOwogIGJ1ZmZlci5jb3B5V2l0aGluKDAsIHNpemUsIHNpemUgKyBzaXplKTsgICAvLyBjb3B5IG91dHB1dCB0byBpbnB1dAogIGlmKCFwYXVzZSl7CiAgZXhwb3J0cy5zdGVwKCk7ICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIHBlcmZvcm0gdGhlIG5leHQgc3RlcAogIH0KICAKfSkoKTsKCi8vIEtlZXAgcmVuZGVyaW5nIHRoZSBvdXRwdXQgYXQgW3NpemUsIDIqc2l6ZV0KdmFyIGltYWdlRGF0YSA9IGN0eC5jcmVhdGVJbWFnZURhdGEod2lkdGgsIGhlaWdodCk7CnZhciBhcmdiID0gbmV3IFVpbnQzMkFycmF5KGltYWdlRGF0YS5kYXRhLmJ1ZmZlcik7CihmdW5jdGlvbiByZW5kZXIoKSB7CiAgcmVxdWVzdEFuaW1hdGlvbkZyYW1lKHJlbmRlcik7CiAgYXJnYi5zZXQoYnVmZmVyLnN1YmFycmF5KHNpemUsIHNpemUgKyBzaXplKSk7IC8vIGNvcHkgb3V0cHV0IHRvIGltYWdlIGJ1ZmZlcgogIGN0eC5wdXRJbWFnZURhdGEoaW1hZ2VEYXRhLCAwLCAwKTsgICAgICAgICAgICAvLyBhcHBseSBpbWFnZSBidWZmZXIKfSkoKTsKCi8vIFdoZW4gY2xpY2tlZCBvciBkcmFnZ2VkLCBmaWxsIHRoZSBjdXJyZW50IHJvdyBhbmQgY29sdW1uIHdpdGggcmFuZG9tIGxpdmUgY2VsbHMKdmFyIGRvd24gPSBmYWxzZTsKWyBbY2FudmFzLCAibW91c2Vkb3duIl0sCiAgW2NhbnZhcywgInRvdWNoc3RhcnQiXQpdLmZvckVhY2goZWggPT4gZWhbMF0uYWRkRXZlbnRMaXN0ZW5lcihlaFsxXSwgZSA9PiBkb3duID0gdHJ1ZSkpOwpbIFtkb2N1bWVudCwgIm1vdXNldXAiXSwKICBbZG9jdW1lbnQsICJ0b3VjaGVuZCJdCl0uZm9yRWFjaChlaCA9PiBlaFswXS5hZGRFdmVudExpc3RlbmVyKGVoWzFdLCBlID0+IGRvd24gPSBmYWxzZSkpOwpbIFtjYW52YXMsICJtb3VzZW1vdmUiXSwKICBbY2FudmFzLCAidG91Y2htb3ZlIl0sCiAgW2NhbnZhcywgIm1vdXNlZG93biJdCl0uZm9yRWFjaChlaCA9PiBlaFswXS5hZGRFdmVudExpc3RlbmVyKGVoWzFdLCBlID0+IHsKICBpZiAoIWRvd24pIHJldHVybjsKICB2YXIgbG9jOwogIGlmIChlLnRvdWNoZXMpIHsKICAgIGlmIChlLnRvdWNoZXMubGVuZ3RoID4gMSkgcmV0dXJuOwogICAgbG9jID0gZS50b3VjaGVzWzBdOwogIH0gZWxzZSB7CiAgICBsb2MgPSBlOwogIH0KICBjb25zdCBjdXJyZW50Qm91bmRpbmdSZWN0ID0gY2FudmFzLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpOwogIGV4cG9ydHMucG9pbnQoCiAgICAoKGxvYy5jbGllbnRYIC0gY3VycmVudEJvdW5kaW5nUmVjdC5sZWZ0KSAvIGN1cnJlbnRCb3VuZGluZ1JlY3Qud2lkdGggKiBib3VuZGluZ1JlY3Qud2lkdGgpID4+PiA1LAogICAgKChsb2MuY2xpZW50WSAtIGN1cnJlbnRCb3VuZGluZ1JlY3QudG9wKSAvIGN1cnJlbnRCb3VuZGluZ1JlY3QuaGVpZ2h0ICogYm91bmRpbmdSZWN0LmhlaWdodCkgPj4+IDUsCiAgICAwLjUKICApOwp9KSk7CgovKiogQml0c2hpZnRzIGFuIFJHQiBjb2xvciB0byBCR1IgaW5zdGVhZCAoV2ViQXNzZW1ibHkgaXMgbGl0dGxlIGVuZGlhbikuICovCmZ1bmN0aW9uIHJnYjJiZ3IocmdiKSB7CiAgcmV0dXJuICgocmdiID4+PiAxNikgJiAweGZmKSB8IChyZ2IgJiAweGZmMDApIHwgKHJnYiAmIDB4ZmYpIDw8IDE2Owp9Cjwvc2NyaXB0Pgo="></iframe>
+                        src="https://www.assemblyscript.org/editor.html#IyFvcHRpbWl6ZT1zcGVlZCZydW50aW1lPXN0dWImaW1wb3J0TWVtb3J5JnVzZT1NYXRoPUpTTWF0aAovLyBDb25maWd1cmF0aW9uIGltcG9ydGVkIGZyb20gSlMKZGVjbGFyZSBjb25zdCBCR1JfQUxJVkU6IHUzMjsKZGVjbGFyZSBjb25zdCBCR1JfREVBRDogdTMyOwpkZWNsYXJlIGNvbnN0IEJJVF9ST1Q6IHUzMjsKCnZhciB3aWR0aDogaTMyLCBoZWlnaHQ6IGkzMiwgb2Zmc2V0OiBpMzI7CgovKiogR2V0cyBhbiBpbnB1dCBwaXhlbCBpbiB0aGUgcmFuZ2UgWzAsIHNdLiAqLwpAaW5saW5lCmZ1bmN0aW9uIGdldCh4OiB1MzIsIHk6IHUzMik6IHUzMiB7CiAgcmV0dXJuIGxvYWQ8dTMyPigoeSAqIHdpZHRoICsgeCkgPDwgMik7Cn0KCi8qKiBTZXRzIGFuIG91dHB1dCBwaXhlbCBpbiB0aGUgcmFuZ2UgW3MsIDIqc10uICovCkBpbmxpbmUKZnVuY3Rpb24gc2V0KHg6IHUzMiwgeTogdTMyLCB2OiB1MzIpOiB2b2lkIHsKICBzdG9yZTx1MzI+KChvZmZzZXQgKyB5ICogd2lkdGggKyB4KSA8PCAyLCB2KTsKfQoKLyoqIFNldHMgYW4gb3V0cHV0IHBpeGVsIGluIHRoZSByYW5nZSBbcywgMipzXSB3aGlsZSBmYWRpbmcgaXQgb3V0LiAqLwpAaW5saW5lCmZ1bmN0aW9uIHJvdCh4OiB1MzIsIHk6IHUzMiwgdjogdTMyKTogdm9pZCB7CiAgdmFyIGFscGhhID0gbWF4PGkzMj4oKHYgPj4gMjQpIC0gQklUX1JPVCwgMCk7CiAgc2V0KHgsIHksIChhbHBoYSA8PCAyNCkgfCAodiAmIDB4MDBmZmZmZmYpKTsKfQoKLyoqIEluaXRpYWxpemVzIHdpZHRoIGFuZCBoZWlnaHQuIENhbGxlZCBvbmNlIGZyb20gSlMuICovCmV4cG9ydCBmdW5jdGlvbiBpbml0KHc6IGkzMiwgaDogaTMyKTogdm9pZCB7CiAgd2lkdGggID0gdzsKICBoZWlnaHQgPSBoOwogIG9mZnNldCA9IHcgKiBoOwoKICAvLyBTdGFydCBieSBmaWxsaW5nIG91dHB1dCB3aXRoIHJhbmRvbSBsaXZlIGNlbGxzLgogIGZvciAobGV0IHkgPSAwOyB5IDwgaDsgKyt5KSB7CiAgICBmb3IgKGxldCB4ID0gMDsgeCA8IHc7ICsreCkgewogICAgICBsZXQgYyA9IE1hdGgucmFuZG9tKCkgPiAwLjEKICAgICAgICA/IEJHUl9ERUFEICAmIDB4MDBmZmZmZmYKICAgICAgICA6IEJHUl9BTElWRSB8IDB4ZmYwMDAwMDA7CiAgICAgIHNldCh4LCB5LCBjKTsKICAgIH0KICB9Cn0KCi8qKiBQZXJmb3JtcyBvbmUgc3RlcC4gQ2FsbGVkIGFib3V0IDMwIHRpbWVzIGEgc2Vjb25kIGZyb20gSlMuICovCmV4cG9ydCBmdW5jdGlvbiBzdGVwKCk6IHZvaWQgewogIHZhciB3ID0gd2lkdGgsCiAgICAgIGggPSBoZWlnaHQ7CgogIHZhciBobTEgPSBoIC0gMSwgLy8gaCAtIDEKICAgICAgd20xID0gdyAtIDE7IC8vIHcgLSAxCgogIC8vIFRoZSB1bml2ZXJzZSBvZiB0aGUgR2FtZSBvZiBMaWZlIGlzIGFuIGluZmluaXRlIHR3by1kaW1lbnNpb25hbCBvcnRob2dvbmFsIGdyaWQgb2Ygc3F1YXJlCiAgLy8gImNlbGxzIiwgZWFjaCBvZiB3aGljaCBpcyBpbiBvbmUgb2YgdHdvIHBvc3NpYmxlIHN0YXRlcywgYWxpdmUgb3IgZGVhZC4KICBmb3IgKGxldCB5ID0gMDsgeSA8IGg7ICsreSkgewogICAgbGV0IHltMSA9IHkgPT0gMCA/IGhtMSA6IHkgLSAxLAogICAgICAgIHlwMSA9IHkgPT0gaG0xID8gMCA6IHkgKyAxOwogICAgZm9yIChsZXQgeCA9IDA7IHggPCB3OyArK3gpIHsKICAgICAgbGV0IHhtMSA9IHggPT0gMCA/IHdtMSA6IHggLSAxLAogICAgICAgICAgeHAxID0geCA9PSB3bTEgPyAwIDogeCArIDE7CgogICAgICAvLyBFdmVyeSBjZWxsIGludGVyYWN0cyB3aXRoIGl0cyBlaWdodCBuZWlnaGJvdXJzLCB3aGljaCBhcmUgdGhlIGNlbGxzIHRoYXQgYXJlIGhvcml6b250YWxseSwKICAgICAgLy8gdmVydGljYWxseSwgb3IgZGlhZ29uYWxseSBhZGphY2VudC4gTGVhc3Qgc2lnbmlmaWNhbnQgYml0IGluZGljYXRlcyBhbGl2ZSBvciBkZWFkLgogICAgICBsZXQgYWxpdmVOZWlnaGJvcnMgPSAoCiAgICAgICAgKGdldCh4bTEsIHltMSkgJiAxKSArIChnZXQoeCwgeW0xKSAmIDEpICsgKGdldCh4cDEsIHltMSkgJiAxKSArCiAgICAgICAgKGdldCh4bTEsIHkgICkgJiAxKSAgICAgICAgICAgICAgICAgICAgICsgKGdldCh4cDEsIHkgICkgJiAxKSArCiAgICAgICAgKGdldCh4bTEsIHlwMSkgJiAxKSArIChnZXQoeCwgeXAxKSAmIDEpICsgKGdldCh4cDEsIHlwMSkgJiAxKQogICAgICApOwoKICAgICAgbGV0IHNlbGYgPSBnZXQoeCwgeSk7CiAgICAgIGlmIChzZWxmICYgMSkgewogICAgICAgIC8vIEEgbGl2ZSBjZWxsIHdpdGggMiBvciAzIGxpdmUgbmVpZ2hib3JzIHJvdHMgb24gdG8gdGhlIG5leHQgZ2VuZXJhdGlvbi4KICAgICAgICBpZiAoKGFsaXZlTmVpZ2hib3JzICYgMGIxMTEwKSA9PSAwYjAwMTApIHJvdCh4LCB5LCBzZWxmKTsKICAgICAgICAvLyBBIGxpdmUgY2VsbCB3aXRoIGZld2VyIHRoYW4gMiBvciBtb3JlIHRoYW4gMyBsaXZlIG5laWdoYm9ycyBkaWVzLgogICAgICAgIGVsc2Ugc2V0KHgsIHksIEJHUl9ERUFEIHwgMHhmZjAwMDAwMCk7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgLy8gQSBkZWFkIGNlbGwgd2l0aCBleGFjdGx5IDMgbGl2ZSBuZWlnaGJvcnMgYmVjb21lcyBhIGxpdmUgY2VsbC4KICAgICAgICBpZiAoYWxpdmVOZWlnaGJvcnMgPT0gMykgc2V0KHgsIHksIEJHUl9BTElWRSB8IDB4ZmYwMDAwMDApOwogICAgICAgIC8vIEEgZGVhZCBjZWxsIHdpdGggZmV3ZXIgb3IgbW9yZSB0aGFuIDMgbGl2ZSBuZWlnaGJvcnMganVzdCByb3RzLgogICAgICAgIGVsc2Ugcm90KHgsIHksIHNlbGYpOwogICAgICB9CiAgICB9CiAgfQp9CgoKLyoqIENyZWF0ZXMgYSBwb2ludCBhdCBgeGAgYW5kIGB5YCBjZWxsLiAqLwpleHBvcnQgZnVuY3Rpb24gcG9pbnQoeDogdTMyLCB5OiB1MzIsIHA6IGY2NCk6IHZvaWQgewogICBzZXQoeCwgeSwgQkdSX0FMSVZFIHwgMHhmZjAwMDAwMCk7Cn0KCi8qKiBGaWxscyB0aGUgcm93IGFuZCBjb2x1bW4gaW5kaWNhdGVkIGJ5IGB4YCBhbmQgYHlgIHdpdGggcmFuZG9tIGxpdmUgY2VsbHMuICovCmV4cG9ydCBmdW5jdGlvbiBmaWxsKHg6IHUzMiwgeTogdTMyLCBwOiBmNjQpOiB2b2lkIHsKICBmb3IgKGxldCBpeCA9IDA7IGl4IDwgd2lkdGg7ICsraXgpIHsKICAgIGlmIChNYXRoLnJhbmRvbSgpIDwgcCkgc2V0KGl4LCB5LCBCR1JfQUxJVkUgfCAweGZmMDAwMDAwKTsKICB9CiAgZm9yIChsZXQgaXkgPSAwOyBpeSA8IGhlaWdodDsgKytpeSkgewogICAgaWYgKE1hdGgucmFuZG9tKCkgPCBwKSBzZXQoeCwgaXksIEJHUl9BTElWRSB8IDB4ZmYwMDAwMDApOwogIH0KfQoKIyFodG1sCjxjYW52YXMgaWQ9ImNhbnZhcyIgc3R5bGU9IndpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IGJhY2tncm91bmQ6ICMwMDA7IGN1cnNvcjogY3Jvc3NoYWlyIj48L2NhbnZhcz4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgovLyBDb25maWd1cmF0aW9uCmNvbnN0IFJHQl9BTElWRSA9IDB4RDM5MkU2Owpjb25zdCBSR0JfREVBRCAgPSAweEE2MUI4NTsKY29uc3QgQklUX1JPVCAgID0gMTAwOwoKLy8gU2V0IHVwIHRoZSBjYW52YXMgd2l0aCBhIDJEIHJlbmRlcmluZyBjb250ZXh0CmNvbnN0IGNhbnZhcyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJjYW52YXMiKTsKY29uc3QgYm91bmRpbmdSZWN0ID0gY2FudmFzLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpOwpjb25zdCBjdHggPSBjYW52YXMuZ2V0Q29udGV4dCgiMmQiKTsKCi8vIENvbXB1dGUgdGhlIHNpemUgb2YgdGhlIHVuaXZlcnNlICgyIHBpeGVscyBwZXIgY2VsbCkKY29uc3Qgd2lkdGggPSBib3VuZGluZ1JlY3Qud2lkdGggPj4+IDU7CmNvbnN0IGhlaWdodCA9IGJvdW5kaW5nUmVjdC5oZWlnaHQgPj4+IDU7CmNvbnN0IHNpemUgPSB3aWR0aCAqIGhlaWdodDsKY29uc3QgYnl0ZVNpemUgPSAoc2l6ZSArIHNpemUpIDw8IDEwOyAvLyBpbnB1dCAmIG91dHB1dCAoNCBieXRlcyBwZXIgY2VsbCkKCmNhbnZhcy53aWR0aCA9IHdpZHRoOwpjYW52YXMuaGVpZ2h0ID0gaGVpZ2h0OwpjYW52YXMuc3R5bGUuaW1hZ2VSZW5kZXJpbmcgPSAicGl4ZWxhdGVkIjsKY3R4LmltYWdlU21vb3RoaW5nRW5hYmxlZCA9IGZhbHNlOwoKLy8gQ29tcHV0ZSB0aGUgc2l6ZSBvZiBhbmQgaW5zdGFudGlhdGUgdGhlIG1vZHVsZSdzIG1lbW9yeQpjb25zdCBtZW1vcnkgPSBuZXcgV2ViQXNzZW1ibHkuTWVtb3J5KHsgaW5pdGlhbDogKChieXRlU2l6ZSArIDB4ZmZmZikgJiB+MHhmZmZmKSA+Pj4gMTYgfSk7CgovLyBDb21waWxlIGFuZCBpbnN0YW50aWF0ZSB0aGUgbW9kdWxlCmNvbnN0IGV4cG9ydHMgPSBhd2FpdCBpbnN0YW50aWF0ZShhd2FpdCBjb21waWxlKCksIHsKICBlbnY6IHsKICAgIG1lbW9yeQogIH0sCiAgbW9kdWxlOiB7CiAgICBCR1JfQUxJVkUgOiByZ2IyYmdyKFJHQl9BTElWRSkgfCAxLCAvLyBMU0Igc2V0IGluZGljYXRlcyBhbGl2ZQogICAgQkdSX0RFQUQgIDogcmdiMmJncihSR0JfREVBRCkgJiB+MSwgLy8gTFNCIG5vdCBzZXQgaW5kaWNhdGVzIGRlYWQKICAgIEJJVF9ST1QKICB9Cn0pOwoKLy8gSW5pdGlhbGl6ZSB0aGUgbW9kdWxlIHdpdGggdGhlIHVuaXZlcnNlJ3Mgd2lkdGggYW5kIGhlaWdodApleHBvcnRzLmluaXQod2lkdGgsIGhlaWdodCk7Cgp2YXIgYnVmZmVyID0gbmV3IFVpbnQzMkFycmF5KG1lbW9yeS5idWZmZXIpOwp2YXIgcGF1c2UgPSBmYWxzZTsKClsgW2RvY3VtZW50LCAia2V5dXAiXSwKXS5mb3JFYWNoKGVoID0+IGVoWzBdLmFkZEV2ZW50TGlzdGVuZXIoZWhbMV0sIGUgPT4gewogaWYgKGUua2V5ID09ICIgIiB8fAogICAgICBlLmNvZGUgPT0gIlNwYWNlIiB8fCAgICAgIAogICAgICBlLmtleUNvZGUgPT0gMzIgICAgICAKICApIHsKICAgIHBhdXNlID0gIXBhdXNlOwogIH19KSk7CgoKCi8vIFVwZGF0ZSBhYm91dCAzMCB0aW1lcyBhIHNlY29uZAooZnVuY3Rpb24gdXBkYXRlKCkgewogIHNldFRpbWVvdXQodXBkYXRlLCAxMDApOwogIGJ1ZmZlci5jb3B5V2l0aGluKDAsIHNpemUsIHNpemUgKyBzaXplKTsgICAvLyBjb3B5IG91dHB1dCB0byBpbnB1dAogIGlmKCFwYXVzZSl7CiAgZXhwb3J0cy5zdGVwKCk7ICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIHBlcmZvcm0gdGhlIG5leHQgc3RlcAogIH0KICAKfSkoKTsKCi8vIEtlZXAgcmVuZGVyaW5nIHRoZSBvdXRwdXQgYXQgW3NpemUsIDIqc2l6ZV0KdmFyIGltYWdlRGF0YSA9IGN0eC5jcmVhdGVJbWFnZURhdGEod2lkdGgsIGhlaWdodCk7CnZhciBhcmdiID0gbmV3IFVpbnQzMkFycmF5KGltYWdlRGF0YS5kYXRhLmJ1ZmZlcik7CihmdW5jdGlvbiByZW5kZXIoKSB7CiAgcmVxdWVzdEFuaW1hdGlvbkZyYW1lKHJlbmRlcik7CiAgYXJnYi5zZXQoYnVmZmVyLnN1YmFycmF5KHNpemUsIHNpemUgKyBzaXplKSk7IC8vIGNvcHkgb3V0cHV0IHRvIGltYWdlIGJ1ZmZlcgogIGN0eC5wdXRJbWFnZURhdGEoaW1hZ2VEYXRhLCAwLCAwKTsgICAgICAgICAgICAvLyBhcHBseSBpbWFnZSBidWZmZXIKfSkoKTsKCi8vIFdoZW4gY2xpY2tlZCBvciBkcmFnZ2VkLCBmaWxsIHRoZSBjdXJyZW50IHJvdyBhbmQgY29sdW1uIHdpdGggcmFuZG9tIGxpdmUgY2VsbHMKdmFyIGRvd24gPSBmYWxzZTsKWyBbY2FudmFzLCAibW91c2Vkb3duIl0sCiAgW2NhbnZhcywgInRvdWNoc3RhcnQiXQpdLmZvckVhY2goZWggPT4gZWhbMF0uYWRkRXZlbnRMaXN0ZW5lcihlaFsxXSwgZSA9PiBkb3duID0gdHJ1ZSkpOwpbIFtkb2N1bWVudCwgIm1vdXNldXAiXSwKICBbZG9jdW1lbnQsICJ0b3VjaGVuZCJdCl0uZm9yRWFjaChlaCA9PiBlaFswXS5hZGRFdmVudExpc3RlbmVyKGVoWzFdLCBlID0+IGRvd24gPSBmYWxzZSkpOwpbIFtjYW52YXMsICJtb3VzZW1vdmUiXSwKICBbY2FudmFzLCAidG91Y2htb3ZlIl0sCiAgW2NhbnZhcywgIm1vdXNlZG93biJdCl0uZm9yRWFjaChlaCA9PiBlaFswXS5hZGRFdmVudExpc3RlbmVyKGVoWzFdLCBlID0+IHsKICBpZiAoIWRvd24pIHJldHVybjsKICB2YXIgbG9jOwogIGlmIChlLnRvdWNoZXMpIHsKICAgIGlmIChlLnRvdWNoZXMubGVuZ3RoID4gMSkgcmV0dXJuOwogICAgbG9jID0gZS50b3VjaGVzWzBdOwogIH0gZWxzZSB7CiAgICBsb2MgPSBlOwogIH0KICBjb25zdCBjdXJyZW50Qm91bmRpbmdSZWN0ID0gY2FudmFzLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpOwogIGV4cG9ydHMucG9pbnQoCiAgICAoKGxvYy5jbGllbnRYIC0gY3VycmVudEJvdW5kaW5nUmVjdC5sZWZ0KSAvIGN1cnJlbnRCb3VuZGluZ1JlY3Qud2lkdGggKiBib3VuZGluZ1JlY3Qud2lkdGgpID4+PiA1LAogICAgKChsb2MuY2xpZW50WSAtIGN1cnJlbnRCb3VuZGluZ1JlY3QudG9wKSAvIGN1cnJlbnRCb3VuZGluZ1JlY3QuaGVpZ2h0ICogYm91bmRpbmdSZWN0LmhlaWdodCkgPj4+IDUsCiAgICAwLjUKICApOwp9KSk7CgovKiogQml0c2hpZnRzIGFuIFJHQiBjb2xvciB0byBCR1IgaW5zdGVhZCAoV2ViQXNzZW1ibHkgaXMgbGl0dGxlIGVuZGlhbikuICovCmZ1bmN0aW9uIHJnYjJiZ3IocmdiKSB7CiAgcmV0dXJuICgocmdiID4+PiAxNikgJiAweGZmKSB8IChyZ2IgJiAweGZmMDApIHwgKHJnYiAmIDB4ZmYpIDw8IDE2Owp9Cjwvc2NyaXB0Pgo="></iframe>
                 </section>
                 <section>
                     <h2>SQLite</h2>
-                    <iframe width="100%" height="500px"
-                        src="https://adawolfs.github.io/sql.js/examples/GUI/" frameborder="0"></iframe>
+                    <iframe width="100%" height="500px" src="https://adawolfs.github.io/sql.js/examples/GUI/"
+                        frameborder="0"></iframe>
                 </section>
                 <section>
                     <a href="https://blazor.net" target="_blank" rel="noopener noreferrer">
@@ -546,11 +564,23 @@
                     <img src="img/tfjs-backend-wasm.png" alt="flutter" srcset="">
                 </section>
                 <section>
-                    <h3>Gaming</h3>
-                    <img src="img/unity_wasm_support.png" alt="unity wasm" srcset="">
+                    <h1>Gaming</h1>
+                </section>
+                <section>
+                    <iframe width="100%" height="500px" src="https://adawolfs.github.io/raw-wasm/match3/"
+                        frameborder="0"></iframe>
                     <a href="https://github.com/binji/raw-wasm" target="_blank" rel="noopener noreferrer">Arcade
                         Games</a>
-                    </section>
+                </section>
+                <section>
+                    <a href="https://blog.unity.com/technology/webassembly-is-here" target="_blank"
+                        rel="noopener noreferrer">
+                        <img class="glitch-03" src="img/unity_wasm_support.png" alt="unity wasm" srcset="">
+                    </a>
+                    <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/webgl-gettingstarted.html"
+                        target="_blank" rel="noopener noreferrer">Unity</a>
+
+                </section>
                 <section>
                     <p>
                         <iframe id="angrybots-iframe" src="https://beta.unity3d.com/jonas/AngryBots/" scrolling="no"
@@ -561,13 +591,9 @@
                     </a>
                 </section>
                 <section>
-                    <h3>Photoshop</h3>
-                    
-                    <img class="r-stretch" src="img/addy_osmani_photoshop_web.png" alt="Addy Osmani Photoshop Web"
-                    srcset="">
+                    <img class="r-stretch" src="img/addy_osmani_photoshop_web.png" alt="Addy Osmani Photoshop Web">
                     <p>
-                        
-                        <a href="https://twitter.com/addyosmani/status/1707811109233897587" target="_blank" >Image Editing</a>
+                        <a href="https://web.dev/articles/ps-on-the-web" target="_blank">Photoshop</a>
                     </p>
                 </section>
                 <section>
@@ -576,7 +602,7 @@
                         frameborder="0"></iframe>
                     <h2>AWS Amplify</h2>
                 </section>
-                
+
                 <section>
                     <h1>Serverless</h1>
                 </section>
@@ -605,16 +631,25 @@ Hello WasmEdge!
                 <section>
                     <iframe scrolling="no" width="100%" style="background-color: white;" height="500px"
                         src="https://second-state.github.io/aws-lambda-wasm-runtime/" frameborder="0"></iframe>
-                        <h2>AWS Lambda</h2>
+                    <h2>AWS Lambda</h2>
                 </section>
                 <section>
                     <iframe scrolling="no" width="100%" style="background-color: white;" height="500px"
                         src="https://robnanarivo.github.io/aws-lambda-wasm-runtime/" frameborder="0"></iframe>
-                        <h2>AWS Lambda</h2>
+                    <h2>AWS Lambda</h2>
                 </section>
-                
                 <section>
                     <h1>Wasm3</h1>
+                </section>
+                <section>
+                    <h1>IoT</h1>
+                    <p>Improve performance and stability</p>
+                </section>
+                <section>
+                    <img src="img/aws/prime_video_js.jpeg" alt="iot wasm pipe" srcset="">
+                </section>
+                <section>
+                    <img src="img/aws/prime_video_js+wasm.jpeg" alt="iot wasm pipe" srcset="">
                 </section>
                 <section>
 
