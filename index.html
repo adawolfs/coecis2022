@@ -383,10 +383,11 @@
                 </section>
                 <section>
                     <h2>Security Model</h2>
-                    <img src="img/wasm-malicious-secured-2.png" width="70%" alt="wasm portability" class="r-stretch" srcset="">
+                    <img src="img/wasm-malicious-secured-2.png" width="70%" alt="wasm portability"
+                        class="r-stretch glitch" srcset="">
                 </section>
                 <section>
-                    <b>Languages that could be compiled to WASM</b>
+                    <b>Languages that can be compiled to WASM</b>
                     <p>C, C++, C#, Go, Java, Kotlin, Python, PHP, Ruby, <span class="glitch">Rust</span>, Scala, Swift
                     </p>
                 </section>
@@ -411,6 +412,11 @@
                     <p> Chrome, Firefox y Safari</p>
                 </section>
                 <section>
+                    <h2>Fibonnaci</h2>
+                    <iframe width="100%" height="500px" title="Editor"
+                        src="https://www.assemblyscript.org/editor.html#IyFydW50aW1lPXN0dWIKLyoqIENhbGN1bGF0ZXMgdGhlIG4tdGggRmlib25hY2NpIG51bWJlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIGZpYihuOiBpMzIpOiBpMzIgewogIHZhciBhID0gMCwgYiA9IDEKICBpZiAobiA+IDApIHsKICAgIHdoaWxlICgtLW4pIHsKICAgICAgbGV0IHQgPSBhICsgYgogICAgICBhID0gYgogICAgICBiID0gdAogICAgfQogICAgcmV0dXJuIGIKICB9CiAgcmV0dXJuIGEKfQoKIyFodG1sCjx0ZXh0YXJlYSBpZD0ib3V0cHV0IiBzdHlsZT0iaGVpZ2h0OiAxMDAlOyB3aWR0aDogMTAwJSIgcmVhZG9ubHk+PC90ZXh0YXJlYT4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgpjb25zdCBleHBvcnRzID0gYXdhaXQgaW5zdGFudGlhdGUoYXdhaXQgY29tcGlsZSgpLCB7IC8qIGltcG9ydHMgKi8gfSkKY29uc3Qgb3V0cHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ291dHB1dCcpCmZvciAobGV0IGkgPSAwOyBpIDw9IDEwOyArK2kpIHsKICBvdXRwdXQudmFsdWUgKz0gYGZpYigke2l9KSA9ICR7ZXhwb3J0cy5maWIoaSl9XG5gCn0KPC9zY3JpcHQ+Cg=="></iframe>
+                </section>
+                <section>
                     <h1>WASI</h1>
                     <p>WebAssembly <span class="glitch">System Interface</span></p>
                     <p>2019</p>
@@ -423,19 +429,35 @@
                     </p>
                 </section>
                 <section>
+
+                </section>
+                <section>
                     <img src="img/solomon_hykes_wasi.png" alt="solomon hykes wasi" srcset="">
+                </section>
+                <section>
+                    <h1>Component Model</h1>
+                    <p>Containers for modules or other components that interacts only through interfaces.</p>
                 </section>
                 <section>
                     <h1>WIT</h1>
                     <p>WASM Interface Type</p>
                 </section>
                 <section>
+                    <p>
+                        An interface description language (IDL) that provides a developer-friendly format to describe
+                        imports and exports for WASM Components
+                    </p>
+                    <p><a href="https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md"
+                            target="_blank" rel="noopener noreferrer">Docs</a></p>
+
+                </section>
+                <section>
                     <h2>WASI Proposals</h2>
                     <div class="row r-stretch">
                         <div class="column">
                             <p class="fragment">I/O</p>
-                            <p class="fragment">Filesystem</p>
                             <p class="fragment">Clocks</p>
+                            <p class="fragment">Filesystem</p>
                             <p class="fragment">Random</p>
                             <p class="fragment">Pool</p>
                             <p class="fragment">Sockets</p>
@@ -508,11 +530,7 @@
                     <p>(Al mismo tiempo)</p>
                 </section>
 
-                <section>
-                    <h2>Fibonnaci</h2>
-                    <iframe width="100%" height="500px" title="Editor"
-                        src="https://www.assemblyscript.org/editor.html#IyFydW50aW1lPXN0dWIKLyoqIENhbGN1bGF0ZXMgdGhlIG4tdGggRmlib25hY2NpIG51bWJlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIGZpYihuOiBpMzIpOiBpMzIgewogIHZhciBhID0gMCwgYiA9IDEKICBpZiAobiA+IDApIHsKICAgIHdoaWxlICgtLW4pIHsKICAgICAgbGV0IHQgPSBhICsgYgogICAgICBhID0gYgogICAgICBiID0gdAogICAgfQogICAgcmV0dXJuIGIKICB9CiAgcmV0dXJuIGEKfQoKIyFodG1sCjx0ZXh0YXJlYSBpZD0ib3V0cHV0IiBzdHlsZT0iaGVpZ2h0OiAxMDAlOyB3aWR0aDogMTAwJSIgcmVhZG9ubHk+PC90ZXh0YXJlYT4KPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgpjb25zdCBleHBvcnRzID0gYXdhaXQgaW5zdGFudGlhdGUoYXdhaXQgY29tcGlsZSgpLCB7IC8qIGltcG9ydHMgKi8gfSkKY29uc3Qgb3V0cHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ291dHB1dCcpCmZvciAobGV0IGkgPSAwOyBpIDw9IDEwOyArK2kpIHsKICBvdXRwdXQudmFsdWUgKz0gYGZpYigke2l9KSA9ICR7ZXhwb3J0cy5maWIoaSl9XG5gCn0KPC9zY3JpcHQ+Cg=="></iframe>
-                </section>
+
                 <section>
                     <h2>Game of Life</h2>
                     <iframe width="100%" height="500px" title="Editor"
@@ -560,8 +578,16 @@
                     </p>
                 </section>
                 <section>
-                    <h3>Machine Learning</h3>
+                    <h1>Machine Learning</h1>
+                </section>
+                <section>
                     <img src="img/tfjs-backend-wasm.png" alt="flutter" srcset="">
+                </section>
+                <section>
+
+                    <iframe width="100%" height="500px" src="https://inference.wasmlabs.dev/" frameborder="0"></iframe>
+                    <a href="https://inference.wasmlabs.dev/" target="_blank" rel="noopener noreferrer">Inference WASM
+                        Labs</a>
                 </section>
                 <section>
                     <h1>Gaming</h1>
@@ -639,21 +665,32 @@ Hello WasmEdge!
                     <h2>AWS Lambda</h2>
                 </section>
                 <section>
-                    <h1>Wasm3</h1>
-                </section>
-                <section>
                     <h1>IoT</h1>
                     <p>Improve performance and stability</p>
                 </section>
                 <section>
-                    <img src="img/aws/prime_video_js.jpeg" alt="iot wasm pipe" srcset="">
+                    <a href="https://www.amazon.science/blog/how-prime-video-updates-its-app-for-more-than-8-000-device-types"
+                        target="_blank" rel="noopener noreferrer">
+                        <p>
+                            How
+                        </p>
+                        <img src="img/aws/prime-video-logo.png" class="glitch" width="500px" alt="iot wasm pipe" srcset="">
+                        <p>
+                            updates it's app for more than 8,00 device types
+                        </p>
+                    </a>
                 </section>
                 <section>
-                    <img src="img/aws/prime_video_js+wasm.jpeg" alt="iot wasm pipe" srcset="">
+                    <h3>Prime Video Legacy</h3>
+                    <img src="img/aws/prime_video_js.jpeg" class="r-stretch" alt="iot wasm pipe" srcset="">
                 </section>
                 <section>
+                    <h2>Prime Video with WASM</h2>
+                    <img src="img/aws/prime_video_js+wasm.jpeg" width="100%" alt="iot wasm pipe" srcset="">
 
-                    <h3>IoT</h3>
+                </section>
+                <section>
+                    <h3>Compilation chain</h3>
                     <a href="https://github.com/wasm3/embedded-wasm-apps" target="_blank" rel="noopener noreferrer">
                         <img width="100%" src="img/iot_wasm_pipe.png" alt="">
                     </a>
